@@ -1,12 +1,9 @@
-/* 
-1) El precio de tu carrito es de $(numero random), con cuanto deseas abonar?
-2) Resta la cifra indicada por el usuario al precio del carrito
-3) Devuelve resultado 
-*/
-
 const Abono = (numRandom) => {
     /* Muestra el carrito y pregunta con cuanto se desea abonar */
-    const userCash = parseInt(prompt(`El precio de tu carrito es de ${numRandom}, con cuanto deseas abonar?`));
+    let userCash = 0;
+    while (userCash < numRandom) {
+        userCash = parseInt(prompt(`El precio de tu carrito es de ${numRandom}, con cuanto deseas abonar?`));
+    }
 
     return userCash;
 }
@@ -31,10 +28,7 @@ const numRandom = Math.floor(Math.random() * 500);
 const userAbono = Abono(numRandom);
 //console.log(userAbono)
 
-if (userAbono < numRandom) {
-    console.log("no te alcanza");
-} else {
-    const vuelto = CalcularVuelto(numRandom, userAbono);
-    const mostrar = MostrarVuelto(vuelto);
-}
+const vuelto = CalcularVuelto(numRandom, userAbono);
+MostrarVuelto(vuelto);
+
 
