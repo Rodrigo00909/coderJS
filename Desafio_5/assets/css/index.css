@@ -1,0 +1,93 @@
+/* Reset */
+
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #F9F9F9;
+}
+
+h1, h2, h3, h4 {
+    color: #393E46;
+}
+
+h1 {
+    margin-bottom: 5rem;
+    font-size: 2.8rem;
+    text-align: center;
+}
+
+.containerCss {
+    max-width: 1700px;
+    margin: 0 auto;
+}
+
+/* FORMULARIO */
+
+.formulario {
+    /* background-color: #f1edcf; */
+    text-align: center;
+}
+
+/* CV */
+
+.cv_Data {
+    background-color: #e7e7e7;
+}
+
+.cv_Name {
+    font-size: 2.3rem;
+}
+
+.cv_Prof {
+    font-size: 1.4rem;
+}
+
+.cv_center {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.cv_Img {
+    border: 1px solid rgb(214, 212, 212);
+    border-radius: 50%;
+    width: 250px;
+    display: flex;
+    align-items: center;
+}
+
+.cv_Button {
+    --offset: 10px;
+    --border-size: 2px;
+
+    display: block;
+    position: relative;
+    padding: 1.5em 3em;
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: #8186D5;
+    text-transform: uppercase;
+    letter-spacing: .25em;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 0;
+    box-shadow: inset 0 0 0 var(--border-size) currentcolor;
+    transition: background .8s ease;
+    margin-top: 1.2rem;    
+}
+
+.cv_Button:hover {
+    background-color: #494CA2;
+    color: #fff;
+}
