@@ -27,7 +27,7 @@ const ordenar = (alumnos,ordenamiento) => {
                 return 1;
             }
         });
-    } else {
+    } else if (ordenamiento === 2){
         alumnos.sort( (a,b) => {
             if(a.nota == b.nota) {
                 return 0;
@@ -37,6 +37,8 @@ const ordenar = (alumnos,ordenamiento) => {
                 return -1;
             }
         });
+    } else {
+        console.log("No introduciste ni 1 ni 2");
     }
 }
 
