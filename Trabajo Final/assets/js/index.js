@@ -21,10 +21,10 @@ const generarCv = () => {
     const setLinkedin = document.getElementById("linkedin")
     const setGithub = document.getElementById("github");
 
-    setName.innerHTML = perfil.nombre;
-    setProf.innerHTML = perfil.profesion;
-    setLinkedin.innerHTML = `https://www.linkedin.com/in/${perfil.linkedin}`;
-    setGithub.innerHTML = `https://github.com/${perfil.github}`;
+    setName.innerHTML = `<h3>${perfil.nombre}</h3>`;
+    setProf.innerHTML = `<p>${perfil.profesion}</p>`;
+    setLinkedin.innerHTML = `<p>https://www.linkedin.com/in/${perfil.linkedin}</p>`;
+    setGithub.innerHTML = `<p>https://github.com/${perfil.github}</p>`;
     /* /Generar Perfil */
 
     /* Generar Experiencias */
@@ -87,6 +87,10 @@ const generarCv = () => {
     insertFormacion.innerHTML = mapear;
 
     /* / Generar Formacion Academica */
+
+    document.querySelector(".dnone").style.display="block";
+
+    document.getElementById("formulario").style.display="none";
 
 }
 

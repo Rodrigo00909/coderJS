@@ -1,3 +1,14 @@
+/* Variables */
+
+:root {
+    --black-color: #0B0A0A;
+    --blackgray-color: #403A3A;
+    --gray-color: #707070;
+    --container-color: #FAFAFA;
+    --container-color-two: #F0EFEF;
+    --body-color: #FCFCFC;
+}
+
 /* Reset */
 
 *, ::before, ::after {
@@ -25,7 +36,7 @@ h1 {
 }
 
 .containerCss {
-    max-width: 1700px;
+    max-width: 1800px;
     margin: 0 auto;
 }
 
@@ -38,8 +49,15 @@ h1 {
 
 /* CV */
 
+.cv {
+}
+
 .cv_Data {
     background-color: #e7e7e7;
+}
+
+.cv_titulo {
+    padding-left: 2rem;
 }
 
 .cv_Name {
@@ -51,10 +69,12 @@ h1 {
 }
 
 .cv_center {
-    display:flex;
-    justify-content: center;
+    display: grid;
+    justify-content: space-evenly;
+    align-content: center;
+    flex-wrap: nowrap;
     align-items: center;
-    flex-wrap: wrap;
+    justify-items: center;
 }
 
 .cv_Img {
@@ -90,4 +110,8 @@ h1 {
 .cv_Button:hover {
     background-color: #494CA2;
     color: #fff;
+}
+
+.dnone {
+    display: none;
 }
