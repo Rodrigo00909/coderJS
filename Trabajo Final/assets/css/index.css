@@ -1,17 +1,19 @@
 /* Variables */
 
 :root {
-    --black-color: #0B0A0A;
-    --blackgray-color: #403A3A;
+    --black-color: #0b0a0a;
+    --blackgray-color: #403a3a;
     --gray-color: #707070;
-    --container-color: #FAFAFA;
-    --container-color-two: #F0EFEF;
-    --body-color: #FCFCFC;
+    --container-color: #fafafa;
+    --container-color-two: #f0efef;
+    --body-color: #fcfcfc;
 }
 
 /* Reset */
 
-*, ::before, ::after {
+*,
+::before,
+::after {
     box-sizing: border-box;
 }
 
@@ -22,11 +24,14 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background-color: #F9F9F9;
+    background-color: #f9f9f9;
 }
 
-h1, h2, h3, h4 {
-    color: #393E46;
+h1,
+h2,
+h3,
+h4 {
+    color: #393e46;
 }
 
 h1 {
@@ -45,6 +50,18 @@ h1 {
 .formulario {
     /* background-color: #f1edcf; */
     text-align: center;
+}
+
+.iconoInput {
+    color: #e8e8e8;
+    font-size: 15px;
+    position: absolute;
+    left: 25px;
+    padding-top: 10px;
+}
+
+.inputPadding {
+    padding-left: 40px;
 }
 
 /* CV */
@@ -69,12 +86,10 @@ h1 {
 }
 
 .cv_center {
-    display: grid;
-    justify-content: space-evenly;
+    display: flex;
+    justify-content: center;
     align-content: center;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-items: center;
+    flex-wrap: wrap;
 }
 
 .cv_Img {
@@ -95,20 +110,20 @@ h1 {
     appearance: none;
     border: 0;
     background: transparent;
-    color: #8186D5;
+    color: #8186d5;
     text-transform: uppercase;
-    letter-spacing: .25em;
+    letter-spacing: 0.25em;
     outline: none;
     cursor: pointer;
     font-weight: bold;
     border-radius: 0;
     box-shadow: inset 0 0 0 var(--border-size) currentcolor;
-    transition: background .8s ease;
-    margin-top: 1.2rem;    
+    transition: background 0.8s ease;
+    margin-top: 1.2rem;
 }
 
 .cv_Button:hover {
-    background-color: #494CA2;
+    background-color: #494ca2;
     color: #fff;
 }
 
