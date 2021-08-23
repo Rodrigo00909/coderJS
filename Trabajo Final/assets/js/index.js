@@ -1,64 +1,79 @@
 const generarCv = () => {
     /* Generar Perfil */
     class Perfil {
-        constructor(n,p,l,g) {
-            this.nombre = n;
-            this.profesion = p;
-            this.linkedin = l;
-            this.github = g;
+        constructor(n,p,t,l,g) {
+            this.nameField = n;
+            this.professionField = p;
+            this.telField = t;
+            this.linkField = l;
+            this.mailField = g;
         }
     }
 
-    nombre = prompt("Tu nombre? ");
+/*     nombre = prompt("Tu nombre? ");
     profesion = prompt("Tu profesión? ");
     linkedin = prompt("Tu linkedIn? (ej: manuelito09) ");
-    github = prompt("Tu github? (ej: manuelito09) ");
-
-    const perfil = new Perfil(nombre, profesion, linkedin, github);
+    github = prompt("Tu github? (ej: manuelito09) "); */
     
-    const setName = document.getElementById("name");
-    const setProf = document.getElementById("prof");
-    const setLinkedin = document.getElementById("linkedin")
-    const setGithub = document.getElementById("github");
+    
+    const nameField = document.querySelector("#nameField").value;
+    const setName = document.querySelector("#name");
 
-    setName.innerHTML = `<h3>${perfil.nombre}</h3>`;
-    setProf.innerHTML = `<p>${perfil.profesion}</p>`;
-    setLinkedin.innerHTML = `<p>https://www.linkedin.com/in/${perfil.linkedin}</p>`;
-    setGithub.innerHTML = `<p>https://github.com/${perfil.github}</p>`;
+    const professionField = document.querySelector("#professionField").value;
+    const setProf = document.querySelector("#prof");
+
+    const telField = document.querySelector("#telField").value;
+    const setTel = document.querySelector("#tel");
+
+    const linkField = document.querySelector("#linkField").value;
+    const setLinkedin = document.querySelector("#linkedin");
+
+    const mailField = document.querySelector("#mailField").value;
+    const setEmail = document.querySelector("#mail");
+
+    
+    const perfil = new Perfil(nameField, professionField, telField, linkField, mailField);
+    
+
+    // Pintar en HTML
+    setName.innerHTML = `<h3>${perfil.nameField}</h3>`;
+    setProf.innerHTML = `<p>${perfil.professionField}</p>`;
+    setTel.innerHTML = `<p>${perfil.telField}</p>`;
+    setLinkedin.innerHTML = `<p>https://github.com/${perfil.linkField}</p>`;
+    setEmail.innerHTML = `<p>https://www.linkedin.com/in/${perfil.mailField}</p>`;
     /* /Generar Perfil */
 
     /* Generar Experiencias */
     class Experiencias {
         constructor(e,d,h,p) {
-            this.empresa = e.toUpperCase();
-            this.desde = d;
-            this.hasta = h;
-            this.puesto = p;
+            this.objField = e;
+            this.expField = d;
+            this.academicaField = h;
         }
         mensaje() {
             console.log("Experiencia agregada con exito!");
         }
     }
 
-    empresa = prompt("Ahora compconstemos su experiencia. Introduzca el nombre de la empresa en la que trabajo: ")
-    desde = prompt("Introduzca la fecha de ingreso a la compañía: ")
-    hasta = prompt("Introduzca la fecha de salida de la compañía: ")
-    puesto = prompt("Introduzaca el puesto en el cual se desempeñó: ")
+    const objField = document.querySelector("#objField");
+    const setObjetivo = document.getElementById("empresa");
+
+    const expField = document.querySelector("#expField");
+    const setExperiencia = document.getElementById("desde");
+
+    const academicaField = document.querySelector("#academicaField");
+    const setEstudio = document.getElementById("hasta")
 
     
-    const experiencia1 = new Experiencias(empresa, desde, hasta, puesto);
-
-    const insertEmpresa = document.getElementById("empresa");
-    const insertDesde = document.getElementById("desde");
-    const insertHasta = document.getElementById("hasta")
-    const insertPuesto = document.getElementById("puesto");
+    const perfilProfesional = new Experiencias(objField, expField, academicaField);
     
-    insertEmpresa.innerHTML = experiencia1.empresa;
-    insertDesde.innerHTML = experiencia1.desde
-    insertHasta.innerHTML = experiencia1.hasta
-    insertPuesto.innerHTML = experiencia1.puesto
+    // DA ERROR
+    
+    setObjetivo.innerHTML = perfilProfesional.objField;
+    setExperiencia.innerHTML = perfilProfesional.expField;
+    setEstudio.innerHTML = perfilProfesional.academicaField;
 
-    experiencia1.mensaje();
+    perfilProfesional.mensaje();
     /* / Generar Experiencias */
 
     /* Generar Formacion Academica */
@@ -87,10 +102,51 @@ const generarCv = () => {
     insertFormacion.innerHTML = mapear;
 
     /* / Generar Formacion Academica */
-
     document.querySelector(".dnone").style.display="block";
 
     document.getElementById("formulario").style.display="none";
+
+}
+
+const añadirFormacion = () => {
+    /* Añade un nuevo campo de Formación académica junto con el botón */
+    let nuevoCampo = document.createElement("textarea");
+    nuevoCampo.classList.add("form-control");
+    nuevoCampo.classList.add("mt-2");
+    nuevoCampo.setAttribute("rows", 3);
+    nuevoCampo.setAttribute("placeholder", "Tus estudios");
+
+    let añadirBtnAcademica = document.querySelector("#academicaAñadirBtn");
+    let padre = document.querySelector("#formacionAcademica").parentNode;
+    
+    // Inserta los elementos hijos dentro del padre
+    padre.insertBefore(nuevoCampo,añadirBtnAcademica)
+}
+
+const añadirExp = () => {
+    /* Añade un nuevo campo de Experiencia junto con el botón */
+    
+    // Crear nodo a insertar
+    let nuevoCampo = document.createElement("textarea");
+    // Clases
+    nuevoCampo.classList.add("form-control");
+    nuevoCampo.classList.add("mt-2");
+    // Atributos
+    nuevoCampo.setAttribute("rows", 3);
+    nuevoCampo.setAttribute("placeholder", "Tu experiencia");
+
+    /* let nuevoSpan = document.createElement("span");
+    nuevoSpan.classList.add("input-group-text"); */
+
+
+    // Boton que se movera
+    let añadirBtnExp = document.querySelector("#expAñadirBtn");
+    // Referencia al nodo padre
+    let padre = document.querySelector("#experiencia").parentNode;
+
+    
+    // Inserta el hijo y el boton
+    padre.insertBefore(nuevoCampo,añadirBtnExp);
 
 }
 
