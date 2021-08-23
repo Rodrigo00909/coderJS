@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/fontawesome/css/all.css">
     <link rel="stylesheet" href="assets/css/index.css">
     <title>Desafío Simulación - CoderHouse</title>
 </head>
+
 <body>
     <h1>Generador de CV</h1>
     <div class="containerCss">
@@ -17,16 +20,65 @@
             <div class="formulario" id="formulario">
                 <h2>Formulario</h2>
 
-                    <div class="cv_center">
-                        <button onclick="generarCv()" class="cv_Button" style="margin-right: 10px;">
-                            Generar CV
-                        </button>
-                        <!-- <button onclick="generarExperiencia()" class="cv_Button">
-                            Generar Experiencias del CV
-                        </button> -->
+                <div class="cv_center">
+                    <div class="col-md-6 container">
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
+                            <input type="text" id="nameField" placeholder="Nombre y Apellido" class="form-control"
+                                aria-describedby="basic-addon1">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon2"><i class="fa fa-user-tie"></i></span>
+                            <!-- aria-describedby y el id basic addon no son necesarios -->
+                            <input type="text" id="professionField" placeholder="Profesión" class="form-control"
+                                aria-describedby="basic-addon2">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fa fa-phone-alt"></i></span>
+                            <input type="text" id="telField" placeholder="Teléfono" class="form-control">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                            <input type="text" id="mailField" placeholder="Email" class="form-control">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fab fa-linkedin"></i></span>
+                            <input type="text" id="linkField" placeholder="LinkedIn" class="form-control">
+                        </div>
                     </div>
+
+                    <div class="col-md-6 container" >
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-bullseye"></i></span>
+                            <textarea type="text" id="objField" placeholder="Tu perfil y/o objetivos"
+                                class="form-control"></textarea>
+                        </div>
+                        <div class="input-group mb-3" id="experiencia">
+                            <span class="input-group-text" id="spanPadre"><i class="fas fa-briefcase"></i></span>
+                            <textarea type="text" id="expField" placeholder="Tu experiencia" class="form-control"
+                                rows="3"></textarea>
+                        </div>
+                        <div class="container text-center mt-2" id="expAñadirBtn">
+                            <button onclick="añadirExp()" class="btn btn-primary btn-sm">Añadir otra</button>
+                        </div>
+                        <div class="input-group mb-3" id="formacionAcademica">
+                            <span id="span" class="input-group-text"><i class="fas fa-user-graduate"></i></span>
+                            <textarea type="text" id="academicaField" placeholder="Tus estudios" class="form-control"
+                                rows="3"></textarea>
+                        </div>
+                        <div class="container text-center mt-2" id="academicaAñadirBtn">
+                            <button onclick="añadirFormacion()" class="btn btn-primary btn-sm">Añadir otra</button>
+                        </div>
+                    </div>
+
+                    <button onclick="generarCv()" class="cv_Button">
+                        Generar CV
+                    </button>
+                </div>
             </div>
- 
+
             <!-- --- CV --- -->
 
             <!-- Header -->
@@ -36,15 +88,18 @@
                         <div class="col-md-4 cv_Data">
                             <!-- Presentación/Contacto -->
                             <div class="cv_center">
-                                <img class="cv_Img" src="https://i.pinimg.com/280x280_RS/0a/cb/2b/0acb2b50bae8e3b817c0678489d0bffe.jpg" alt="Foto Cv">
+                                <img class="cv_Img"
+                                    src="https://i.pinimg.com/280x280_RS/0a/cb/2b/0acb2b50bae8e3b817c0678489d0bffe.jpg"
+                                    alt="Foto Cv">
                                 <div>
                                     <h2 class="cv_Name" id="name"></h2>
                                     <h3 class="cv_Prof" id="prof"></h3>
                                 </div>
                             </div>
                             <div>
+                                <p><a id="tel" href="#"></a></p>
                                 <p><a id="linkedin" href="#"></a></p>
-                                <p><a id="github" href="#"></a></p>
+                                <p><a id="mail" href="#"></a></p>
                             </div>
                             <!-- Experiencias/Estudios -->
                         </div>
@@ -65,7 +120,7 @@
                                 <h2>Formación Académica</h2>
                                 <div id="estudios">
                                 </div>
-                            </div>                                                                                                    
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -81,4 +136,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/index.js"></script>
 </body>
+
 </html>
