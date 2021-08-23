@@ -10,10 +10,6 @@ const generarCv = () => {
         }
     }
 
-/*     nombre = prompt("Tu nombre? ");
-    profesion = prompt("Tu profesión? ");
-    linkedin = prompt("Tu linkedIn? (ej: manuelito09) ");
-    github = prompt("Tu github? (ej: manuelito09) "); */
     
     
     const nameField = document.querySelector("#nameField").value;
@@ -55,14 +51,14 @@ const generarCv = () => {
         }
     }
 
-    const objField = document.querySelector("#objField");
-    const setObjetivo = document.getElementById("empresa");
+    const objField = document.querySelector("#objField").value;
+    const setObjetivo = document.querySelector("#objDiv");
 
-    const expField = document.querySelector("#expField");
-    const setExperiencia = document.getElementById("desde");
+    const expField = document.querySelector("#expField").value;
+    const setExperiencia = document.querySelector("#expDiv");
 
-    const academicaField = document.querySelector("#academicaField");
-    const setEstudio = document.getElementById("hasta")
+    const academicaField = document.querySelector("#academicaField").value;
+    const setEstudio = document.querySelector("#estudiosDiv")
 
     
     const perfilProfesional = new Experiencias(objField, expField, academicaField);
@@ -77,7 +73,7 @@ const generarCv = () => {
     /* / Generar Experiencias */
 
     /* Generar Formacion Academica */
-    class FormacionAcademica {
+    /* class FormacionAcademica {
         constructor(lugar, titulo) {
             this.lugar = lugar.toUpperCase();
             this.titulo = titulo;
@@ -99,7 +95,7 @@ const generarCv = () => {
 
 
     const mapear = estudios.map( (estudio) => `<p>${estudio.lugar}</p><p>${estudio.titulo}</p>`);
-    insertFormacion.innerHTML = mapear;
+    insertFormacion.innerHTML = mapear; */
 
     /* / Generar Formacion Academica */
     document.querySelector(".dnone").style.display="block";
