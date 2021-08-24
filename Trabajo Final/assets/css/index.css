@@ -40,12 +40,23 @@ h1 {
     text-align: center;
 }
 
+.ml-10 {
+    margin-left: 10px !important;
+}
+
 .containerCss {
     max-width: 1800px;
     margin: 0 auto;
 }
 
 /* FORMULARIO */
+
+.form_center {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
 
 .formulario {
     /* background-color: #f1edcf; */
@@ -85,11 +96,13 @@ h1 {
     font-size: 1.4rem;
 }
 
+
+
 .cv_center {
-    display: flex;
+    display: grid;
     justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
+    align-items: start;
+    justify-items: center;
 }
 
 .cv_Img {

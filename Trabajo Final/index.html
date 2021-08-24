@@ -20,7 +20,7 @@
             <div class="formulario" id="formulario">
                 <h2>Formulario</h2>
 
-                <div class="cv_center">
+                <div class="form_center">
                     <div class="col-md-6 container">
 
                         <div class="input-group mb-3">
@@ -47,6 +47,14 @@
                             <span class="input-group-text"><i class="fab fa-linkedin"></i></span>
                             <input type="text" id="linkField" placeholder="LinkedIn" class="form-control">
                         </div>
+                        <div class="input-group mb-3 skills" id="form_skills">
+                            <span class="input-group-text"><i class="fas fa-trophy"></i></span>
+                            <input type="text" id="sk1" placeholder="Tu skill más importante" class="form-control skill"> 
+                            <span class="input-group-text ml-10"><i class="fas fa-trophy"></i></span>
+                            <input type="text" id="sk2" placeholder="Tu 2da skill más importante" class="form-control skill">
+                            <span class="input-group-text ml-10"><i class="fas fa-trophy"></i></span>
+                            <input type="text" id="sk3" placeholder="Tu 3ra skill más importante" class="form-control skill"> 
+                        </div>
                     </div>
 
                     <div class="col-md-6 container" >
@@ -61,7 +69,9 @@
                                 rows="3"></textarea>
                         </div>
                         <div class="container text-center mt-2" id="expAñadirBtn">
-                            <button onclick="añadirExp()" class="btn btn-primary btn-sm">Añadir otra</button>
+                            <button onclick="añadirExp()" class="btn btn-primary btn-sm mb-2">
+                                <i class="fas fa-plus-circle"></i>
+                            </button>
                         </div>
                         <div class="input-group mb-3" id="formacionAcademica">
                             <span id="span" class="input-group-text"><i class="fas fa-user-graduate"></i></span>
@@ -69,7 +79,9 @@
                                 rows="3"></textarea>
                         </div>
                         <div class="container text-center mt-2" id="academicaAñadirBtn">
-                            <button onclick="añadirFormacion()" class="btn btn-primary btn-sm">Añadir otra</button>
+                            <button onclick="añadirFormacion()" class="btn btn-primary btn-sm">
+                                <i class="fas fa-plus-circle"></i>
+                            </button>
                         </div>
                     </div>
 
@@ -101,25 +113,24 @@
                                 <p><a id="linkedin" href="#"></a></p>
                                 <p><a id="mail" href="#"></a></p>
                             </div>
-                            <!-- Experiencias/Estudios -->
+                            <div id="cv_skills"></div>
                         </div>
+                        
+                        <!-- Experiencias/Estudios -->
                         <div class="col-md-8 cv_titulo">
                             <div class="cv_Objetivos">
                                 <h2>Objetivos</h2>
+                                <div id="objDiv"></div>
                             </div>
                             <div id="cv_Exp">
                                 <h2>Experiencia</h2>
-                                <div>
-                                    <p id="empresa"></p>
-                                    <p id="desde"></p>
-                                    <p id="hasta"></p>
-                                    <p id="puesto"></p>
+                                <div id="expDiv">
+                                    
                                 </div>
                             </div>
                             <div class="cv_Estudios">
                                 <h2>Formación Académica</h2>
-                                <div id="estudios">
-                                </div>
+                                <div id="estudiosDiv"></div>
                             </div>
                         </div>
                     </div>

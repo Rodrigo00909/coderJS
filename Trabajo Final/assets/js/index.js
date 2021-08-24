@@ -36,7 +36,7 @@ const generarCv = () => {
     setProf.innerHTML = `<p>${perfil.professionField}</p>`;
     setTel.innerHTML = `<p>${perfil.telField}</p>`;
     setLinkedin.innerHTML = `<p>https://github.com/${perfil.linkField}</p>`;
-    setEmail.innerHTML = `<p>https://www.linkedin.com/in/${perfil.mailField}</p>`;
+    setEmail.innerHTML = `<p>${perfil.mailField}</p>`;
     /* /Generar Perfil */
 
     /* Generar Experiencias */
@@ -73,36 +73,43 @@ const generarCv = () => {
     /* / Generar Experiencias */
 
     /* Generar Formacion Academica */
-    /* class FormacionAcademica {
-        constructor(lugar, titulo) {
-            this.lugar = lugar.toUpperCase();
-            this.titulo = titulo;
+    // /RE-VER: NO TRAE NADA 
+    class Skills {
+        constructor(skill) {
+            this.skill1 = skill;
+
         }
         mensaje() {
-            console.log("Formación Académica agregada con exito!");
+            console.log("Skills agregados con exito");
         }
     }
 
-    const estudios = [];
-    lugar = prompt("En que universidad o instituto estudiaste? ");
-    titulo = prompt("que título obtuviste? ");
+    let arraySkills = [];
+    const setSkills = document.querySelector("#cv_skills");
 
+    let skills = document.querySelectorAll(".skill");
 
-    estudios.push(new FormacionAcademica(lugar, titulo));
-    console.log(estudios)
+    for(let i = 0; i < skills.length; i++) {
+        // arraySkills[i] = skills[i].value;
+        arraySkills = new Skills(skills[i].value)
+        console.log(arraySkills);
+    }
 
-    const insertFormacion = document.getElementById("estudios");
+    /* const mapear = arraySkills.map(function(skill) {
+        return `<li>${skill}</li>`
+    });
+    setSkills.innerHTML = mapear; */
 
+    // /RE-VER: NO TRAE NADA 
 
-    const mapear = estudios.map( (estudio) => `<p>${estudio.lugar}</p><p>${estudio.titulo}</p>`);
-    insertFormacion.innerHTML = mapear; */
 
     /* / Generar Formacion Academica */
+    
     document.querySelector(".dnone").style.display="block";
 
-    document.getElementById("formulario").style.display="none";
-
+    document.querySelector("#formulario").style.display="none";
 }
+
 
 const añadirFormacion = () => {
     /* Añade un nuevo campo de Formación académica junto con el botón */
@@ -144,7 +151,9 @@ const añadirExp = () => {
     // Inserta el hijo y el boton
     padre.insertBefore(nuevoCampo,añadirBtnExp);
 
-}
+}   
+
+
 
 
 const importarCV = () => {
