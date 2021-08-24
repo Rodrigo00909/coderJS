@@ -76,7 +76,7 @@ const generarCv = () => {
     // /RE-VER: NO TRAE NADA 
     class Skills {
         constructor(skill) {
-            this.skill1 = skill;
+            this.skill = skill;
 
         }
         mensaje() {
@@ -87,16 +87,26 @@ const generarCv = () => {
     let arraySkills = [];
     const setSkills = document.querySelector("#cv_skills");
 
-    let skills = document.querySelectorAll(".skill");
+    let skill = document.querySelectorAll(".skill");
 
-    for(let i = 0; i < skills.length; i++) {
+    for(let i = 0; i < skill.length; i++) {
         // arraySkills[i] = skills[i].value;
-        arraySkills = new Skills(skills[i].value)
+        arraySkills = new Skills(skill[i].value);
         console.log(arraySkills);
+        setSkills.innerHTML += `<li>${arraySkills.skill}</li>`
     }
 
-    /* const mapear = arraySkills.map(function(skill) {
-        return `<li>${skill}</li>`
+    /* const fragment = document.createDocumentFragment();
+    arraySkills.forEach( (item) => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        console.log(li);
+        fragment.appendChild(li);
+        //setSkills.appendChild(li);
+    }); */
+/* `<li>${skill}</li>` */
+    /* const mapear = arraySkills.map( (skill) => {
+        return console.log(skill);
     });
     setSkills.innerHTML = mapear; */
 
