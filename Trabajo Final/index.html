@@ -17,12 +17,12 @@
         <div class="row">
             <!-- --- Formulario --- -->
 
-            <div class="formulario" id="formulario">
-                <h2>Formulario</h2>
+            <div class="formulario" id="formulario">                
 
                 <div class="form_center">
                     <div class="col-md-6 container">
 
+                        <!-- Perfil Personal -->
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
                             <input type="text" id="nameField" placeholder="Nombre y Apellido" class="form-control"
@@ -47,6 +47,7 @@
                             <span class="input-group-text"><i class="fab fa-linkedin"></i></span>
                             <input type="text" id="linkField" placeholder="LinkedIn" class="form-control">
                         </div>
+                        <!-- Skills -->
                         <div class="input-group mb-3 skills" id="form_skills">
                             <span class="input-group-text"><i class="fas fa-trophy"></i></span>
                             <input type="text" id="sk1" placeholder="Tu skill más importante" class="form-control skill"> 
@@ -55,8 +56,22 @@
                             <span class="input-group-text ml-10"><i class="fas fa-trophy"></i></span>
                             <input type="text" id="sk3" placeholder="Tu 3ra skill más importante" class="form-control skill"> 
                         </div>
+                        <!-- /Skills -->
+                        <!-- Tecnologías -->
+                        <div class="input-group mb-3 tecnologies" id="form_tecnologies">
+                            <span class="input-group-text"><i class="fab fa-codepen"></i></span>
+                            <input type="text" id="tc1" placeholder="Tecnología 1" class="form-control tecnology"> 
+                            <span class="input-group-text ml-10"><i class="fab fa-codepen"></i></span>
+                            <input type="text" id="tc2" placeholder="Tecnología 2" class="form-control tecnology">
+                            <span class="input-group-text ml-10"><i class="fab fa-codepen"></i></span>
+                            <input type="text" id="tc3" placeholder="Tecnología 3" class="form-control tecnology"> 
+                        </div>
+                        <!-- /Tecnologías -->
+                        <!-- /Perfil Personal -->
                     </div>
+                    <!-- --- /Formulario --- -->
 
+                    <!-- Perfil Profesional -->
                     <div class="col-md-6 container" >
                         <div class="input-group mb-3">
                             <span class="input-group-text"><i class="fas fa-bullseye"></i></span>
@@ -69,7 +84,7 @@
                                 rows="3"></textarea>
                         </div>
                         <div class="container text-center mt-2" id="expAñadirBtn">
-                            <button onclick="añadirExp()" class="btn btn-primary btn-sm mb-2">
+                            <button onclick="añadirExp()" class="btn btn-primary btn-sm mb-2 btn_add">
                                 <i class="fas fa-plus-circle"></i>
                             </button>
                         </div>
@@ -79,11 +94,12 @@
                                 rows="3"></textarea>
                         </div>
                         <div class="container text-center mt-2" id="academicaAñadirBtn">
-                            <button onclick="añadirFormacion()" class="btn btn-primary btn-sm">
+                            <button onclick="añadirFormacion()" class="btn btn-primary btn-sm btn_add">
                                 <i class="fas fa-plus-circle"></i>
                             </button>
                         </div>
                     </div>
+                    <!-- /Perfil Profesional -->
 
                     <button onclick="generarCv()" class="cv_Button">
                         Generar CV
@@ -94,7 +110,7 @@
             <!-- --- CV --- -->
 
             <!-- Header -->
-            <div class="cv dnone">
+            <div class="cv dnone" id="curriculum">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4 cv_Data">
@@ -108,12 +124,13 @@
                                     <h3 class="cv_Prof" id="prof"></h3>
                                 </div>
                             </div>
-                            <div>
-                                <p><a id="tel" href="#"></a></p>
-                                <p><a id="linkedin" href="#"></a></p>
-                                <p><a id="mail" href="#"></a></p>
+                            <div> <!-- Contact -->
+                                <p id="tel"></p>
+                                <p id="linkedin"></p>
+                                <p id="mail"></p>
                             </div>
-                            <div id="cv_skills"></div>
+                            <div id="cv_skills"></div> <!-- Skills -->
+                            <div><ul id="cv_tecnologies"></ul></div> <!-- Tecnologies -->
                         </div>
                         
                         <!-- Experiencias/Estudios -->
@@ -141,6 +158,7 @@
                     </button>
                 </div>
             </div>
+            <!-- --- /CV --- -->
         </div>
     </div>
 

@@ -1,3 +1,4 @@
+/* Construir CV */
 const generarCv = () => {
     /* Generar Perfil */
     class Perfil {
@@ -32,16 +33,17 @@ const generarCv = () => {
     
 
     // Pintar en HTML
-    setName.innerHTML = `<h3>${perfil.nameField}</h3>`;
-    setProf.innerHTML = `<p>${perfil.professionField}</p>`;
-    setTel.innerHTML = `<p>${perfil.telField}</p>`;
-    setLinkedin.innerHTML = `<p>https://github.com/${perfil.linkField}</p>`;
-    setEmail.innerHTML = `<p>${perfil.mailField}</p>`;
+    setName.innerHTML = `${perfil.nameField}`;
+    setProf.innerHTML = `${perfil.professionField}`;
+    setTel.innerHTML = `${perfil.telField}`;
+    setLinkedin.innerHTML = `<a href="https://www.linkedin.com/in/${perfil.linkField}" target="_blank">${perfil.linkField}</a>`;
+    setEmail.innerHTML = `${perfil.mailField}`;
     /* /Generar Perfil */
 
-    /* Generar Experiencias */
-    class Experiencias {
-        constructor(e,d,h,p) {
+    /* Generar PerfilProfesional */
+    // Genera el PerfilProfesional a partir de un objeto que recibe los valores de los inputs
+    class PerfilProfesional {
+        constructor(e,d,h) {
             this.objField = e;
             this.expField = d;
             this.academicaField = h;
@@ -61,19 +63,18 @@ const generarCv = () => {
     const setEstudio = document.querySelector("#estudiosDiv")
 
     
-    const perfilProfesional = new Experiencias(objField, expField, academicaField);
-    
-    // DA ERROR
+    const perfilProfesional = new PerfilProfesional(objField, expField, academicaField);
+
     
     setObjetivo.innerHTML = perfilProfesional.objField;
     setExperiencia.innerHTML = perfilProfesional.expField;
     setEstudio.innerHTML = perfilProfesional.academicaField;
 
     perfilProfesional.mensaje();
-    /* / Generar Experiencias */
+    /* / Generar PerfilProfesional */
 
-    /* Generar Formacion Academica */
-    // /RE-VER: NO TRAE NADA 
+    /* Generar Skills */
+    // Genera Skills a partir de un Array de objetos obteniendo valores de los inputs
     class Skills {
         constructor(skill) {
             this.skill = skill;
@@ -89,38 +90,62 @@ const generarCv = () => {
 
     let skill = document.querySelectorAll(".skill");
 
+    // Obtiene cada valor de los inputs con la clase skill, crea un objeto con dichos valores y luego los
+    /// asigna a un array para generarlos en el html
     for(let i = 0; i < skill.length; i++) {
         // arraySkills[i] = skills[i].value;
         arraySkills = new Skills(skill[i].value);
-        console.log(arraySkills);
-        setSkills.innerHTML += `<li>${arraySkills.skill}</li>`
+        //console.log(arraySkills);
+        setSkills.innerHTML += `<p>- ${arraySkills.skill}</p>`
     }
 
-    /* const fragment = document.createDocumentFragment();
-    arraySkills.forEach( (item) => {
-        const li = document.createElement("li");
-        li.textContent = item;
-        console.log(li);
-        fragment.appendChild(li);
-        //setSkills.appendChild(li);
-    }); */
-/* `<li>${skill}</li>` */
-    /* const mapear = arraySkills.map( (skill) => {
-        return console.log(skill);
-    });
-    setSkills.innerHTML = mapear; */
+    /* /Generar Skills */
 
-    // /RE-VER: NO TRAE NADA 
+    /* Generar Tecnologías */
 
+    class Tecnologies {
+        constructor(tecnology) {
+            this.tecnology = tecnology;
+        }
+    }
 
-    /* / Generar Formacion Academica */
+    const cvTecnologies = document.querySelector("#cv_tecnologies");
     
-    document.querySelector(".dnone").style.display="block";
+    // const arrayTecnologies = ["item 1", "item 2", "item 3"];
+    let arrayTecnologies = [];
 
-    document.querySelector("#formulario").style.display="none";
+    const fragment = document.createDocumentFragment();
+    let tecnology = document.querySelectorAll(".tecnology");
+
+    for(let i = 0; i < tecnology.length; i++) {
+        // Constructor + asignar valor de constructor al array
+        arrayTecnologies = new Tecnologies(tecnology[i].value);
+        // Crear elemento
+        const li = document.createElement("li");
+        // Asignarle cada elemento como texto al li
+        li.textContent = arrayTecnologies.tecnology;
+        // Asignar como hijo el li al fragmento para no generar reflow
+        fragment.appendChild(li);
+    }
+
+    cvTecnologies.appendChild(fragment);
+
+    /* /Generar Tecnologías */
+    
+    /* Esconder Formulario - Mostrar CV */
+    const formulario = document.querySelector("#formulario");
+    formulario.setAttribute("class", "dnone");
+
+    const curriculum = document.querySelector("#curriculum");
+    setTimeout(() => {
+        curriculum.setAttribute("class", "slide-in-right");
+        curriculum.classList.remove("dnone");
+    }, 250);
+    /* / Esconder Formulario - Mostrar CV */
 }
+/* /Construir CV */
 
-
+/* Añadir Formación */
 const añadirFormacion = () => {
     /* Añade un nuevo campo de Formación académica junto con el botón */
     let nuevoCampo = document.createElement("textarea");
@@ -135,7 +160,9 @@ const añadirFormacion = () => {
     // Inserta los elementos hijos dentro del padre
     padre.insertBefore(nuevoCampo,añadirBtnAcademica)
 }
+/* /Añadir Formación */
 
+/* Añadir Experiencia */
 const añadirExp = () => {
     /* Añade un nuevo campo de Experiencia junto con el botón */
     
@@ -160,12 +187,10 @@ const añadirExp = () => {
     
     // Inserta el hijo y el boton
     padre.insertBefore(nuevoCampo,añadirBtnExp);
-
 }   
+/* /Añadir Experiencia */
 
-
-
-
+/* Importar CV como PDF */
 const importarCV = () => {
     alert("Importando CV como PDF...");
 }
