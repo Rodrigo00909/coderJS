@@ -143,6 +143,10 @@ h1 {
     text-align: center;
 }
 
+textarea {
+    resize: none;
+}
+
 .ml-10 {
     margin-left: 10px !important;
 }

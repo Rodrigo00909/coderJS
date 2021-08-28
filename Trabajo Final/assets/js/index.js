@@ -10,7 +10,6 @@ const generarCv = () => {
             this.mailField = g;
         }
     }
-
     
     
     const nameField = document.querySelector("#nameField").value;
@@ -36,7 +35,7 @@ const generarCv = () => {
     setName.innerHTML = `${perfil.nameField}`;
     setProf.innerHTML = `${perfil.professionField}`;
     setTel.innerHTML = `${perfil.telField}`;
-    setLinkedin.innerHTML = `<a href="https://www.linkedin.com/in/${perfil.linkField}" target="_blank">${perfil.linkField}</a>`;
+    setLinkedin.innerHTML = `<a href="https://www.linkedin.com/in/${perfil.linkField}" target="_blank">${perfil.linkField}</a>`; // Agregarlo en el constructor no aca
     setEmail.innerHTML = `${perfil.mailField}`;
     /* /Generar Perfil */
 
@@ -66,9 +65,9 @@ const generarCv = () => {
     const perfilProfesional = new PerfilProfesional(objField, expField, academicaField);
 
     
-    setObjetivo.innerHTML = perfilProfesional.objField;
-    setExperiencia.innerHTML = perfilProfesional.expField;
-    setEstudio.innerHTML = perfilProfesional.academicaField;
+    setObjetivo.innerHTML = `<p>${perfilProfesional.objField}</p>`;
+    setExperiencia.innerHTML = `<p>${perfilProfesional.expField}</p>`;
+    setEstudio.innerHTML = `<p>${perfilProfesional.academicaField}</p>`;
 
     perfilProfesional.mensaje();
     /* / Generar PerfilProfesional */
@@ -196,9 +195,6 @@ const importarCV = () => {
 }
 
 
-/* var exp = document.getElementById("cv_Exp");
-var p = document.createElement("p");
-const experiencia = "Tengo 10 años de experiencia"
-p.innerHTML = experiencia;
-exp.appendChild(p); */
-
+// Añadir eventos
+// Añadir localstorage 
+// Añadir json
