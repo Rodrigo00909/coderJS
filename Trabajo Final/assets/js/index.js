@@ -1,5 +1,7 @@
 /* Construir CV */
-const generarCv = () => {
+const btnGenerarCv = document.querySelector(".btnGenerarCv");
+
+btnGenerarCv.addEventListener("click", () => {
     /* Generar Perfil */
     class Perfil {
         constructor(n,p,t,l,g) {
@@ -141,12 +143,13 @@ const generarCv = () => {
         curriculum.classList.remove("dnone");
     }, 250);
     /* / Esconder Formulario - Mostrar CV */
-}
+})
 /* /Construir CV */
 
 /* Añadir Formación */
-const añadirFormacion = () => {
-    /* Añade un nuevo campo de Formación académica junto con el botón */
+const añadirFormacion = document.querySelector(".añadirFormacion");
+añadirFormacion.addEventListener("click", () => {
+        /* Añade un nuevo campo de Formación académica junto con el botón */
     let nuevoCampo = document.createElement("textarea");
     nuevoCampo.classList.add("form-control");
     nuevoCampo.classList.add("mt-2");
@@ -157,12 +160,13 @@ const añadirFormacion = () => {
     let padre = document.querySelector("#formacionAcademica").parentNode;
     
     // Inserta los elementos hijos dentro del padre
-    padre.insertBefore(nuevoCampo,añadirBtnAcademica)
-}
+    padre.insertBefore(nuevoCampo,añadirBtnAcademica);
+});
 /* /Añadir Formación */
-
+//console.log("DISTE CLICK")
 /* Añadir Experiencia */
-const añadirExp = () => {
+const añadirExp = document.querySelector(".añadirExp");
+añadirExp.addEventListener("click", () => {
     /* Añade un nuevo campo de Experiencia junto con el botón */
     
     // Crear nodo a insertar
@@ -186,15 +190,14 @@ const añadirExp = () => {
     
     // Inserta el hijo y el boton
     padre.insertBefore(nuevoCampo,añadirBtnExp);
-}   
+});
 /* /Añadir Experiencia */
 
 /* Importar CV como PDF */
-const importarCV = () => {
+const importarCV = document.querySelector(".importarCV");
+importarCV.addEventListener("click", () => {
     alert("Importando CV como PDF...");
-}
+})
 
-
-// Añadir eventos
 // Añadir localstorage 
 // Añadir json
