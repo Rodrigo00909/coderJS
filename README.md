@@ -1,4 +1,4 @@
-<h1>Generador de CV</h1>
+<h1 align="center">Generador de CV</h1>
 
 <h2 align="center">
 En este Repositorio está todo mi trayecto por el curso de Coder. La carpeta más importante es Trabajo Final, ya que contiene mi proyecto final.
@@ -18,7 +18,7 @@ Es un Generador de Currilum Vitae, realizado con puro Vainilla Javascripp y Css+
 
 <br>
 
-<img width="50px" align="center" justify="center" src="https://i.postimg.cc/j5gdPg8h/2.png" />
+<img align="center" justify="center" src="https://i.postimg.cc/j5gdPg8h/2.png" />
 
 ## Realizado hasta ahora
 
