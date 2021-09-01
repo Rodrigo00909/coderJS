@@ -204,8 +204,8 @@ importarCV.addEventListener("click", () => {
     alert("Importando CV como PDF...");
 })
 
-// Añadir localstorage 
-// Añadir json
+// Cambiar color de fondo y titulos + LocalStorage
+// PENDIENTE: Llevarlo a un archivo JS aparte
 
 // Titulos con Subrayados
 const tituloObjetivos = document.querySelector(".spanObjetivos");
@@ -228,7 +228,7 @@ const agregarBotones = (e) => {
         <button type="button" class="btn btn_green4 circulo"></button>    
     `
 }
-
+// Delegar acción
 const delegacion = (e) => {
     e.preventDefault();
     const colorBoton = e.target.classList[1];
