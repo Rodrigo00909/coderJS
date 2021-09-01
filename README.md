@@ -1,7 +1,7 @@
 <h1 align="center">Generador de CV</h1>
 
 <h2 align="center">
-En este Repositorio está todo mi trayecto por el curso de Coder. La carpeta más importante es Trabajo Final, ya que contiene mi proyecto final.
+En este Repositorio está todo mi trayecto por el curso de Coder. La carpeta más importante es <strong>Trabajo Final</strong>, ya que contiene mi proyecto final.
 </h2>
 
 <h4 align="center">
