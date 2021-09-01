@@ -31,7 +31,7 @@ Trata de un formulario donde colocás tu información personal y luego es genera
 - [x] Javascript: Cambio de color de fondo & LocalStorage 
 - [x] Animaciones básicas
 
-## En progreso
+## Pendiente
 - [ ] Estructura Final
 - [ ] Estilos Finales
 - [ ] Agregación de datos de input +
