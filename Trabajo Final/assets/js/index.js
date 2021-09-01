@@ -15,24 +15,29 @@ btnGenerarCv.addEventListener("click", () => {
     
     
     const nameField = document.querySelector("#nameField").value;
+    localStorage.setItem('nombre', nameField);
     const setName = document.querySelector("#name");
 
     const professionField = document.querySelector("#professionField").value;
+    localStorage.setItem('profesion', professionField);
     const setProf = document.querySelector("#prof");
 
     const telField = document.querySelector("#telField").value;
+    localStorage.setItem('telefono', telField);
     const setTel = document.querySelector("#tel");
 
     const linkField = document.querySelector("#linkField").value;
+    localStorage.setItem('linkedin', linkField);
     const setLinkedin = document.querySelector("#linkedin");
 
     const mailField = document.querySelector("#mailField").value;
+    localStorage.setItem('mail', mailField);
     const setEmail = document.querySelector("#mail");
 
     
     const perfil = new Perfil(nameField, professionField, telField, linkField, mailField);
-    
 
+    
     // Pintar en HTML
     setName.innerHTML = `${perfil.nameField}`;
     setProf.innerHTML = `${perfil.professionField}`;
@@ -201,3 +206,5 @@ importarCV.addEventListener("click", () => {
 
 // Añadir localstorage 
 // Añadir json
+
+

@@ -230,6 +230,16 @@ textarea {
     align-items: center;
 }
 
+.cv_Objetivos h2 span,
+.cv_Exp h2 span,
+.cv_Estudios h2 span {
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.2em;
+  background-position: 0 88%;
+  transition: background-size 0.25s ease-in;
+}
+
 .cv_Button {
     --offset: 10px;
     --border-size: 2px;
