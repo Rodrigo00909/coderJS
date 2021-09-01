@@ -21,6 +21,8 @@ Trata de un formulario donde colocás tu información personal y luego es genera
 
 <img align="center" justify="center" src="https://i.postimg.cc/j5gdPg8h/2.png" />
 
+Link: https://generador-cv.netlify.app/
+
 ## Realizado hasta ahora
 
 - [x] Diseño en Figma
