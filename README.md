@@ -14,7 +14,7 @@ Es un Generador de Currilum Vitae, realizado con puro Vainilla Javascripp y Css+
 
 ### Sin más spoilers les dejo unas screen para que puedan verlo.
 
-<img width="50px" align="center" justify="center" src="https://i.postimg.cc/Y9qC4Kx9/1.png" />
+<img align="center" justify="center" src="https://i.postimg.cc/Y9qC4Kx9/1.png" />
 
 <br>
 
@@ -39,7 +39,7 @@ Es un Generador de Currilum Vitae, realizado con puro Vainilla Javascripp y Css+
 - [ ] Font principal
 
 ## Contactame en:
-<p  align="center">
+
 <a href="https://www.linkedin.com/in/torresmessenzani/">
 <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-</p>
+
