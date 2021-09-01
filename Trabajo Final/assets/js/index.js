@@ -207,4 +207,112 @@ importarCV.addEventListener("click", () => {
 // Añadir localstorage 
 // Añadir json
 
+// Titulos con Subrayados
+const tituloObjetivos = document.querySelector(".spanObjetivos");
+const tituloExp = document.querySelector(".spanExp");
+const tituloEstudios = document.querySelector(".spanEstudios");
+// Fondo del CV
+const cvFondo = document.querySelector(".cv_Data");
+// Contenedor Botones
+const botones = document.querySelector("#botones");
+// Boton principal
+const btnBotones = document.querySelector(".BtnBotones");
 
+// Pintar botones
+const agregarBotones = (e) => {
+    e.preventDefault();
+    botones.innerHTML = `
+        <button type="button" class="btn btn_green1 circulo"></button>
+        <button type="button" class="btn btn_green2 circulo"></button>
+        <button type="button" class="btn btn_green3 circulo"></button>
+        <button type="button" class="btn btn_green4 circulo"></button>    
+    `
+}
+
+const delegacion = (e) => {
+    e.preventDefault();
+    const colorBoton = e.target.classList[1];
+
+    switch(colorBoton) {
+        case('btn_green1'): // En el caso de que colorBoton tenga esta clase
+            cvFondo.className = "col-md-4 bg_green1";
+            localStorage.setItem('colorFondo', "col-md-4 bg_green1");
+
+            tituloObjetivos.className = "span_green1";
+            localStorage.setItem('colorObjetivos', "span_green1");
+
+            tituloExp.className = "span_green1";
+            localStorage.setItem('colorExp', "span_green1");
+
+            tituloEstudios.className = "span_green1";
+            localStorage.setItem('colorEstudios', "span_green1");
+            break;
+
+        case('btn_green2'):
+            cvFondo.className = "col-md-4 bg_green2";
+            localStorage.setItem('colorFondo', "col-md-4 bg_green2");
+
+            tituloObjetivos.className = "span_green2";
+            localStorage.setItem('colorObjetivos', "span_green2");
+
+            tituloExp.className = "span_green2";
+            localStorage.setItem('colorExp', "span_green2");
+
+            tituloEstudios.className = "span_green2";
+            localStorage.setItem('colorEstudios', "span_green2");
+            break;
+
+        case('btn_green3'): 
+            cvFondo.className = "col-md-4 bg_green3";
+            localStorage.setItem('colorFondo', "col-md-4 bg_green3");
+            
+            tituloObjetivos.className = "span_green3";
+            localStorage.setItem('colorObjetivos', "span_green3");
+
+            tituloExp.className = "span_green3";
+            localStorage.setItem('colorExp', "span_green3");
+
+            tituloEstudios.className = "span_green3";
+            localStorage.setItem('colorEstudios', "span_green3");
+            break;
+
+        case('btn_green4'): 
+            cvFondo.className = "col-md-4 bg_green4";
+            localStorage.setItem('colorFondo', "col-md-4 bg_green4");
+
+            tituloObjetivos.className = "span_green4";
+            localStorage.setItem('colorObjetivos', "span_green4");
+
+            tituloExp.className = "span_green4";
+            localStorage.setItem('colorExp', "span_green4");
+
+            tituloEstudios.className = "span_green4";
+            localStorage.setItem('colorEstudios', "span_green4");
+            break;
+    }
+}
+// IIFEs
+// Agregar botones y delegaciones
+(() =>{
+    btnBotones.addEventListener("click", agregarBotones);
+    botones.addEventListener("click", delegacion);
+})();
+
+// Leer info de LocalStorage
+(() => {
+    const colorDeFondo = localStorage.getItem('colorFondo');
+    const colorObjetivos = localStorage.getItem('colorObjetivos');
+    const colorExp = localStorage.getItem('colorExp');
+    const colorEstudios = localStorage.getItem('colorEstudios');
+
+    if(colorDeFondo === null) {
+        cvFondo.className = "col-md-4 cv_Data";
+    } else {
+        cvFondo.className = colorDeFondo;
+        tituloObjetivos.className = colorObjetivos;
+        tituloExp.className = colorExp;
+        tituloEstudios.className = colorEstudios;
+    }
+
+
+})(); // (Se ejecuta cuando el navedaor se refresca parecido a onload)
