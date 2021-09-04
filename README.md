@@ -6,7 +6,7 @@ En este Repositorio está todo mi trayecto por el curso de Coder. La carpeta má
 
 <h4 align="center">
 ¿Cuál es mi proyecto final, entonces? 
-Es un Generador de Currilum Vitae, realizado con puro Vainilla Javascripp y Css+Bootstrap.
+Es un Generador de Currilum Vitae, realizado con Vainilla Javascript en su mayoría, Css+Bootstrap y Jquery para algunas animaciones.
 </h4>
 
 <h4 align="center">
