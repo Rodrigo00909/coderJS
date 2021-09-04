@@ -240,7 +240,7 @@ textarea {
     resize: none;
 }
 
-input,
+input.form-control,
 textarea {
     box-shadow: none !important;
 }
@@ -407,6 +407,7 @@ textarea {
     background-image: linear-gradient(120deg, #83b271 0%, #83b271 100%);
 }
 
+.btnGenerarCv,
 .cv_Button {
     --offset: 10px;
     --border-size: 2px;
@@ -429,9 +430,20 @@ textarea {
     margin-top: 1.2rem;
 }
 
+.btnGenerarCv:hover,
 .cv_Button:hover {
     background-color: #494ca2;
     color: #fff;
+}
+
+.divGenerar {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+p#agregarAlert {
+    color: #e49494;
 }
 
 .dnone {
