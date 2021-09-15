@@ -19,7 +19,7 @@ Trata de un formulario donde colocás tu información personal y luego es genera
 
 <br>
 
-<img align="center" justify="center" src="https://i.postimg.cc/j5gdPg8h/2.png" />
+<img align="center" justify="center" src="https://i.postimg.cc/htpPT7B3/cv1.png" />
 
 Link: https://generador-cv.netlify.app/
 
