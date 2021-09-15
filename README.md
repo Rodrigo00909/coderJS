@@ -32,12 +32,13 @@ Link: https://generador-cv.netlify.app/
 - [x] Javascript: Clases y Constructores
 - [x] Javascript: Cambio de color de fondo & LocalStorage 
 - [x] Animaciones básicas
+- [x] Agregación de datos de input +
+- [x] Descarga de PDF
 
 ## Pendiente
 - [ ] Estructura Final
+- [ ] Agregación de campo Idiomas
 - [ ] Estilos Finales
-- [ ] Agregación de datos de input +
-- [ ] Descarga de PDF
 - [ ] Animaciones avanzadas
 - [ ] Font principal
 
