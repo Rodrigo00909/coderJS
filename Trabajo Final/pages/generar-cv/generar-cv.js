@@ -99,15 +99,37 @@ $(btnGenerarCv).click( (e) => {
 
         perfilProfesional.mensaje(); */
 
-        const setExperiencia = document.querySelector("#expDiv");
-        let objField = document.getElementsByClassName("expField");
+        /* Generar Objetivo Personal */
+        const objField = document.querySelector("#objField").value;
+        const setObjetivo = document.querySelector("#objDiv");
+        setObjetivo.innerHTML = `<p class="mb-0">${objField}</p>`;
+        /* // Generar Objetivo Personal */
 
-        let expStrings;
-        for(let e of objField) {
-            expStrings = expStrings + `<p>${e.value}</p>`;
+
+        /* Generar Estudios */
+        let academicaField = document.querySelectorAll(".academicaField");
+        const setEstudio = document.querySelector("#estudiosDiv");
+
+        let estudioStrings = '';
+        for(let e of academicaField) {
+            estudioStrings = estudioStrings + `<p class="resume-timeline-item">${e.value}</p>`;
+        }
+
+        setEstudio.innerHTML = estudioStrings;
+
+        /* // Generar Estudios */
+
+        /* Generar Experiencia */
+        let expField = document.querySelectorAll(".expField");
+        const setExperiencia = document.querySelector("#expDiv");
+
+        let expStrings = '';
+        for(let e of expField) {
+            expStrings = expStrings + `<p class="resume-timeline-item">${e.value}</p>`;
         }
 
         setExperiencia.innerHTML = expStrings;
+        /* // Generar Experiencia */
 
 
         /* / Generar PerfilProfesional */
@@ -198,6 +220,7 @@ añadirFormacion.addEventListener("click", (e) => {
     let nuevoCampo = document.createElement("textarea");
     nuevoCampo.classList.add("form-control");
     nuevoCampo.classList.add("mt-2");
+    nuevoCampo.classList.add("academicaField");
     nuevoCampo.setAttribute("rows", 3);
     nuevoCampo.setAttribute("placeholder", "Tus estudios");
 
@@ -266,8 +289,8 @@ const delegacion = (e) => {
 
     switch(colorBoton) {
         case('btn_green1'): // En el caso de que colorBoton tenga esta clase
-            cvFondo.className = "bg_green1";
-            localStorage.setItem('colorFondo', "bg_green1");
+            cvFondo.className = "btn_green1";
+            localStorage.setItem('colorFondo', "resume-section-title-storage1");
 
             tituloObjetivos.className = "span_green1";
             localStorage.setItem('colorObjetivos', "span_green1");
@@ -280,8 +303,8 @@ const delegacion = (e) => {
             break;
 
         case('btn_green2'):
-            cvFondo.className = "bg_green2";
-            localStorage.setItem('colorFondo', "bg_green2");
+            cvFondo.className = "btn_green2";
+            localStorage.setItem('colorFondo', "resume-section-title-storage2");
 
             tituloObjetivos.className = "span_green2";
             localStorage.setItem('colorObjetivos', "span_green2");
@@ -294,8 +317,8 @@ const delegacion = (e) => {
             break;
 
         case('btn_green3'): 
-            cvFondo.className = "bg_green3";
-            localStorage.setItem('colorFondo', "bg_green3");
+            cvFondo.className = "btn_green3";
+            localStorage.setItem('colorFondo', "resume-section-title-storage3");
             
             tituloObjetivos.className = "span_green3";
             localStorage.setItem('colorObjetivos', "span_green3");
@@ -308,8 +331,8 @@ const delegacion = (e) => {
             break;
 
         case('btn_green4'): 
-            cvFondo.className = "bg_green4";
-            localStorage.setItem('colorFondo', "bg_green4");
+            cvFondo.className = "btn_green4";
+            localStorage.setItem('colorFondo', "resume-section-title-storage4");
 
             tituloObjetivos.className = "span_green4";
             localStorage.setItem('colorObjetivos', "span_green4");
@@ -372,7 +395,7 @@ importarCV.addEventListener("click", () => {
         },
         jsPDF: {
             unit: "in",
-            format: "a4",
+            format: "a3",
             orientation: 'landscape' // landscape o portrait
         }
     })

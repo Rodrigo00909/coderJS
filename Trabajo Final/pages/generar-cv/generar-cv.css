@@ -371,9 +371,9 @@ textarea {
 .resume-timeline-item:before {
     content: "";
     display: inline-block;
-    position: absolute;
+    position: relative;
     left: -32px;
-    top: 3px;
+    top: 0px;
     width: 15px;
     height: 15px;
     border: 4px solid #58677c; /* ATENTOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO */
@@ -401,6 +401,38 @@ textarea {
     color: #58677c;
 }
 
+.btn_green1 {
+    background-color: #434E5E;
+}
+
+.resume-section-title-storage1 {
+    color: #434E5E
+}
+
+.btn_green2 {
+    background-color: #D2EA9B;
+}
+
+.resume-section-title-storage2 {
+    color: #D2EA9B
+}
+
+.btn_green3 {
+    background-color: #ABCB89;
+}
+
+.resume-section-title-storage3 {
+    color: #ABCB89
+}
+
+.btn_green4 {
+    background-color: #83B271;
+}
+
+.resume-section-title-storage4 {
+    color: #83B271
+}
+
 .botones {
     display: flex;
     justify-content: flex-end;
@@ -423,26 +455,6 @@ textarea {
 .BtnBotones:hover {
     background: #8186d599;
     color: #7a7a7a;
-}
-
-.btn_green1,
-.bg_green1 {
-    background-color: #E7F0D2;
-}
-
-.btn_green2,
-.bg_green2 {
-    background-color: #D2EA9B;
-}
-
-.btn_green3,
-.bg_green3 {
-    background-color: #ABCB89;
-}
-
-.btn_green4,
-.bg_green4 {
-    background-color: #83B271;
 }
 
 #importar {
