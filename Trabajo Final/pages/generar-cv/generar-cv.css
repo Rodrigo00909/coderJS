@@ -323,6 +323,7 @@ textarea {
 
 .resume-header .cv_Prof {
     font-size: 1.5rem;
+    color: #dcdcdc;
 }
 
 .list-unstyled {
@@ -332,10 +333,15 @@ textarea {
 
 .text-link {
     text-decoration: none;
+    color: #dcdcdc;
 }
 
 .text-link:hover {
     text-decoration: underline;
+}
+
+.cv-icons {
+   color: #dcdcdc;
 }
 
 .cv_center {
@@ -410,28 +416,29 @@ textarea {
 }
 
 .btn_green2 {
-    background-color: #D2EA9B;
+    background-color: #4c525a;
 }
 
 .resume-section-title-storage2 {
-    color: #D2EA9B
+    color: #4c525a
 }
 
 .btn_green3 {
-    background-color: #ABCB89;
+    background-color: #757779;
 }
 
 .resume-section-title-storage3 {
-    color: #ABCB89
+    color: #757779
 }
 
 .btn_green4 {
-    background-color: #83B271;
+    background-color: #bfc0c1;
 }
 
 .resume-section-title-storage4 {
-    color: #83B271
+    color: #bfc0c1
 }
+
 
 .botones {
     display: flex;
@@ -477,31 +484,7 @@ textarea {
     box-shadow: none;
 } */
 
-.span_green1,
-.span_green2,
-.span_green3,
-.span_green4 {
-    background-repeat: no-repeat;
-    background-size: 100% 0.2em;
-    background-position: 0 88%;
-    transition: background-size 0.25s ease-in;
-}
 
-.span_green1 {
-    background-image: linear-gradient(120deg, #e7f0d2 0%, #e7f0d2 100%);
-}
-
-.span_green2 {
-    background-image: linear-gradient(120deg, #d2ea9b 0%, #d2ea9b 100%);
-}
-
-.span_green3 {
-    background-image: linear-gradient(120deg, #abcb89 0%, #abcb89 100%);
-}
-
-.span_green4 {
-    background-image: linear-gradient(120deg, #83b271 0%, #83b271 100%);
-}
 
 .btnGenerarCv,
 .cv_Button {

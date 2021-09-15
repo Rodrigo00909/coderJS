@@ -265,6 +265,8 @@ añadirExp.addEventListener("click", (e) => {
 const tituloObjetivos = document.querySelector(".spanObjetivos");
 const tituloExp = document.querySelector(".spanExp");
 const tituloEstudios = document.querySelector(".spanEstudios");
+const tituloSkills = document.querySelector(".spanSkills");
+const tituloTecnologias = document.querySelector(".spanTecnologias");
 // Fondo del CV
 const cvFondo = document.querySelector(".cv_Data");
 // Contenedor Botones
@@ -290,58 +292,82 @@ const delegacion = (e) => {
     switch(colorBoton) {
         case('btn_green1'): // En el caso de que colorBoton tenga esta clase
             cvFondo.className = "btn_green1";
-            localStorage.setItem('colorFondo', "resume-section-title-storage1");
+            localStorage.setItem('colorFondo', "btn_green1");
 
-            tituloObjetivos.className = "span_green1";
-            localStorage.setItem('colorObjetivos', "span_green1");
+            tituloObjetivos.className = "resume-section-title-storage1";
+            localStorage.setItem('colorObjetivos', "resume-section-title-storage1");
 
-            tituloExp.className = "span_green1";
-            localStorage.setItem('colorExp', "span_green1");
+            tituloExp.className = "resume-section-title-storage1";
+            localStorage.setItem('colorExp', "resume-section-title-storage1");
 
-            tituloEstudios.className = "span_green1";
-            localStorage.setItem('colorEstudios', "span_green1");
+            tituloEstudios.className = "resume-section-title-storage1";
+            localStorage.setItem('colorEstudios', "resume-section-title-storage1");
+
+            tituloSkills.className = "resume-section-title-storage1";
+            localStorage.setItem('colorSkills', "resume-section-title-storage1");
+
+            tituloTecnologias.className = "resume-section-title-storage1";
+            localStorage.setItem('colorTecnologias', "resume-section-title-storage1");
             break;
 
         case('btn_green2'):
             cvFondo.className = "btn_green2";
-            localStorage.setItem('colorFondo', "resume-section-title-storage2");
+            localStorage.setItem('colorFondo', "btn_green2");
 
-            tituloObjetivos.className = "span_green2";
-            localStorage.setItem('colorObjetivos', "span_green2");
+            tituloObjetivos.className = "resume-section-title-storage2";
+            localStorage.setItem('colorObjetivos', "resume-section-title-storage2");
 
-            tituloExp.className = "span_green2";
-            localStorage.setItem('colorExp', "span_green2");
+            tituloExp.className = "resume-section-title-storage2";
+            localStorage.setItem('colorExp', "resume-section-title-storage2");
 
-            tituloEstudios.className = "span_green2";
-            localStorage.setItem('colorEstudios', "span_green2");
+            tituloEstudios.className = "resume-section-title-storage2";
+            localStorage.setItem('colorEstudios', "resume-section-title-storage2");
+
+            tituloSkills.className = "resume-section-title-storage2";
+            localStorage.setItem('colorSkills', "resume-section-title-storage2");
+
+            tituloTecnologias.className = "resume-section-title-storage2";
+            localStorage.setItem('colorTecnologias', "resume-section-title-storage2");
             break;
 
         case('btn_green3'): 
             cvFondo.className = "btn_green3";
-            localStorage.setItem('colorFondo', "resume-section-title-storage3");
+            localStorage.setItem('colorFondo', "btn_green3");
             
-            tituloObjetivos.className = "span_green3";
-            localStorage.setItem('colorObjetivos', "span_green3");
+            tituloObjetivos.className = "resume-section-title-storage3";
+            localStorage.setItem('colorObjetivos', "resume-section-title-storage3");
 
-            tituloExp.className = "span_green3";
-            localStorage.setItem('colorExp', "span_green3");
+            tituloExp.className = "resume-section-title-storage3";
+            localStorage.setItem('colorExp', "resume-section-title-storage3");
 
-            tituloEstudios.className = "span_green3";
-            localStorage.setItem('colorEstudios', "span_green3");
+            tituloEstudios.className = "resume-section-title-storage3";
+            localStorage.setItem('colorEstudios', "resume-section-title-storage3");
+
+            tituloSkills.className = "resume-section-title-storage3";
+            localStorage.setItem('colorSkills', "resume-section-title-storage3");
+
+            tituloTecnologias.className = "resume-section-title-storage3";
+            localStorage.setItem('colorTecnologias', "resume-section-title-storage3");
             break;
 
         case('btn_green4'): 
             cvFondo.className = "btn_green4";
-            localStorage.setItem('colorFondo', "resume-section-title-storage4");
+            localStorage.setItem('colorFondo', "btn_green4");
 
-            tituloObjetivos.className = "span_green4";
-            localStorage.setItem('colorObjetivos', "span_green4");
+            tituloObjetivos.className = "resume-section-title-storage4";
+            localStorage.setItem('colorObjetivos', "resume-section-title-storage4");
 
-            tituloExp.className = "span_green4";
-            localStorage.setItem('colorExp', "span_green4");
+            tituloExp.className = "resume-section-title-storage4";
+            localStorage.setItem('colorExp', "resume-section-title-storage4");
 
-            tituloEstudios.className = "span_green4";
-            localStorage.setItem('colorEstudios', "span_green4");
+            tituloEstudios.className = "resume-section-title-storage4";
+            localStorage.setItem('colorEstudios', "resume-section-title-storage4");
+
+            tituloSkills.className = "resume-section-title-storage4";
+            localStorage.setItem('colorSkills', "resume-section-title-storage4");
+
+            tituloTecnologias.className = "resume-section-title-storage4";
+            localStorage.setItem('colorTecnologias', "resume-section-title-storage4");
             break;
     }
 }
@@ -358,6 +384,8 @@ const delegacion = (e) => {
     const colorObjetivos = localStorage.getItem('colorObjetivos');
     const colorExp = localStorage.getItem('colorExp');
     const colorEstudios = localStorage.getItem('colorEstudios');
+    const colorSkills = localStorage.getItem('colorSkills');
+    const colorTecnologias = localStorage.getItem('colorTecnologias');
 
     if(colorDeFondo === null) {
         cvFondo.className = "cv_Data";
@@ -366,6 +394,8 @@ const delegacion = (e) => {
         tituloObjetivos.className = colorObjetivos;
         tituloExp.className = colorExp;
         tituloEstudios.className = colorEstudios;
+        tituloSkills.className = colorSkills;
+        tituloTecnologias.className = colorTecnologias;
     }
 
 
