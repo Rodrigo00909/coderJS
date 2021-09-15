@@ -66,8 +66,10 @@ $(btnGenerarCv).click( (e) => {
         /* /Generar Perfil */
 
         /* Generar PerfilProfesional */
+
+
         // Genera el PerfilProfesional a partir de un objeto que recibe los valores de los inputs
-        class PerfilProfesional {
+        /* class PerfilProfesional {
             constructor(e,d,h) {
                 this.objField = e;
                 this.expField = d;
@@ -95,7 +97,19 @@ $(btnGenerarCv).click( (e) => {
         setExperiencia.innerHTML = `<p>${perfilProfesional.expField}</p>`;
         setEstudio.innerHTML = `<p>${perfilProfesional.academicaField}</p>`;
 
-        perfilProfesional.mensaje();
+        perfilProfesional.mensaje(); */
+
+        const setExperiencia = document.querySelector("#expDiv");
+        let objField = document.getElementsByClassName("expField");
+
+        let expStrings;
+        for(let e of objField) {
+            expStrings = expStrings + `<p>${e.value}</p>`;
+        }
+
+        setExperiencia.innerHTML = expStrings;
+
+
         /* / Generar PerfilProfesional */
 
         /* Generar Skills */
@@ -206,6 +220,7 @@ añadirExp.addEventListener("click", (e) => {
     // Clases
     nuevoCampo.classList.add("form-control");
     nuevoCampo.classList.add("mt-2");
+    nuevoCampo.classList.add("expField");
     // Atributos
     nuevoCampo.setAttribute("rows", 3);
     nuevoCampo.setAttribute("placeholder", "Tu experiencia");
@@ -251,8 +266,8 @@ const delegacion = (e) => {
 
     switch(colorBoton) {
         case('btn_green1'): // En el caso de que colorBoton tenga esta clase
-            cvFondo.className = "col-md-4 bg_green1";
-            localStorage.setItem('colorFondo', "col-md-4 bg_green1");
+            cvFondo.className = "bg_green1";
+            localStorage.setItem('colorFondo', "bg_green1");
 
             tituloObjetivos.className = "span_green1";
             localStorage.setItem('colorObjetivos', "span_green1");
@@ -265,8 +280,8 @@ const delegacion = (e) => {
             break;
 
         case('btn_green2'):
-            cvFondo.className = "col-md-4 bg_green2";
-            localStorage.setItem('colorFondo', "col-md-4 bg_green2");
+            cvFondo.className = "bg_green2";
+            localStorage.setItem('colorFondo', "bg_green2");
 
             tituloObjetivos.className = "span_green2";
             localStorage.setItem('colorObjetivos', "span_green2");
@@ -279,8 +294,8 @@ const delegacion = (e) => {
             break;
 
         case('btn_green3'): 
-            cvFondo.className = "col-md-4 bg_green3";
-            localStorage.setItem('colorFondo', "col-md-4 bg_green3");
+            cvFondo.className = "bg_green3";
+            localStorage.setItem('colorFondo', "bg_green3");
             
             tituloObjetivos.className = "span_green3";
             localStorage.setItem('colorObjetivos', "span_green3");
@@ -293,8 +308,8 @@ const delegacion = (e) => {
             break;
 
         case('btn_green4'): 
-            cvFondo.className = "col-md-4 bg_green4";
-            localStorage.setItem('colorFondo', "col-md-4 bg_green4");
+            cvFondo.className = "bg_green4";
+            localStorage.setItem('colorFondo', "bg_green4");
 
             tituloObjetivos.className = "span_green4";
             localStorage.setItem('colorObjetivos', "span_green4");
@@ -322,7 +337,7 @@ const delegacion = (e) => {
     const colorEstudios = localStorage.getItem('colorEstudios');
 
     if(colorDeFondo === null) {
-        cvFondo.className = "col-md-4 cv_Data";
+        cvFondo.className = "cv_Data";
     } else {
         cvFondo.className = colorDeFondo;
         tituloObjetivos.className = colorObjetivos;

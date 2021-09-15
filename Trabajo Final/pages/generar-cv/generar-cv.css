@@ -231,7 +231,7 @@ h4 {
 }
 
 h1 {
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
     font-size: 2.8rem;
     text-align: center;
 }
@@ -285,29 +285,57 @@ textarea {
 }
 
 
-.fab,
-.fas,
-.fa {
+.form-redes {
     color: #E3E7F1;
+}
+
+.text-center {
+    text-align: center !important;
 }
 
 
 /* CV */
 
+.cv-container {
+    max-width: 1140px;
+    padding-left: 11px;
+    padding-right: 11px;
+    box-shadow: 0 1rem 3rem rgb(0 0 0 / 18%);
+}
+
 .cv_Data {
     background-color: #e7e7e7;
 }
 
-.cv_titulo {
-    padding-left: 2rem;
+.cv-img {
+    padding-left: 0;
 }
 
-.cv_Name {
-    font-size: 2.3rem;
+.resume-header .picture {
+    width: 220px;
 }
 
-.cv_Prof {
-    font-size: 1.4rem;
+.resume-header .cv_Name {
+    font-size: 2.25rem;
+    letter-spacing: 0.175rem;
+    font-weight: 900;
+}
+
+.resume-header .cv_Prof {
+    font-size: 1.5rem;
+}
+
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+.text-link {
+    text-decoration: none;
+}
+
+.text-link:hover {
+    text-decoration: underline;
 }
 
 .cv_center {
@@ -325,9 +353,58 @@ textarea {
     align-items: center;
 }
 
+.resume-timeline {
+    padding-left: 2rem;
+}
+
+.resume-timeline:before {
+    content: "";
+    display: inline-block;
+    width: 3px;
+    height: 100%;
+    background: #aab4c3;
+    left: 6px;
+    top: 4px;
+    position: absolute;
+}
+
+.resume-timeline-item:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: -32px;
+    top: 3px;
+    width: 15px;
+    height: 15px;
+    border: 4px solid #58677c; /* ATENTOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO */
+    background: white;
+    border-radius: 50%;
+}
+
+.resume-section-title {
+    font-size: 1.25rem;
+    position: relative;
+    color: #434E5E;
+}
+
+.resume-section-title:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1.5px;
+    background: #8d9aad;
+}
+
+.resume-section-content {
+    color: #58677c;
+}
+
 .botones {
     display: flex;
     justify-content: flex-end;
+    right: 2px;
 }
 
 .BtnBotones {
@@ -387,7 +464,6 @@ textarea {
     outline: none;
     box-shadow: none;
 } */
-
 
 .span_green1,
 .span_green2,
