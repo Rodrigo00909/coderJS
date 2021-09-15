@@ -293,6 +293,19 @@ textarea {
     text-align: center !important;
 }
 
+.skillTechIdioma {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* width: 85%;
+margin-left: 30px; */
+
+/* .skillTechIdioma .row {
+    padding-right: 4px;
+    padding-left: 4px
+} */
+
 
 /* CV */
 
@@ -424,21 +437,25 @@ textarea {
 }
 
 .btn_green3 {
-    background-color: #757779;
+    background-color: #4880b9;
 }
 
 .resume-section-title-storage3 {
-    color: #757779
+    color: #4880b9
 }
 
 .btn_green4 {
-    background-color: #bfc0c1;
+    background-color: #1d4f82;
 }
 
 .resume-section-title-storage4 {
-    color: #bfc0c1
+    color: #1d4f82
 }
 
+/* .hackInput {
+    margin-left: 42px;
+    width: 95%;
+} */
 
 .botones {
     display: flex;

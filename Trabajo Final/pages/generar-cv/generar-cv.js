@@ -65,40 +65,6 @@ $(btnGenerarCv).click( (e) => {
         setEmail.innerHTML = `${perfil.mailField}`;
         /* /Generar Perfil */
 
-        /* Generar PerfilProfesional */
-
-
-        // Genera el PerfilProfesional a partir de un objeto que recibe los valores de los inputs
-        /* class PerfilProfesional {
-            constructor(e,d,h) {
-                this.objField = e;
-                this.expField = d;
-                this.academicaField = h;
-            }
-            mensaje() {
-                console.log("Experiencia agregada con exito!");
-            }
-        }
-
-        const objField = document.querySelector("#objField").value;
-        const setObjetivo = document.querySelector("#objDiv");
-
-        const expField = document.querySelector("#expField").value;
-        const setExperiencia = document.querySelector("#expDiv");
-
-        const academicaField = document.querySelector("#academicaField").value;
-        const setEstudio = document.querySelector("#estudiosDiv")
-
-        
-        const perfilProfesional = new PerfilProfesional(objField, expField, academicaField);
-
-        
-        setObjetivo.innerHTML = `<p>${perfilProfesional.objField}</p>`;
-        setExperiencia.innerHTML = `<p>${perfilProfesional.expField}</p>`;
-        setEstudio.innerHTML = `<p>${perfilProfesional.academicaField}</p>`;
-
-        perfilProfesional.mensaje(); */
-
         /* Generar Objetivo Personal */
         const objField = document.querySelector("#objField").value;
         const setObjetivo = document.querySelector("#objDiv");
@@ -132,33 +98,17 @@ $(btnGenerarCv).click( (e) => {
         /* // Generar Experiencia */
 
 
-        /* / Generar PerfilProfesional */
-
         /* Generar Skills */
-        // Genera Skills a partir de un Array de objetos obteniendo valores de los inputs
-        class Skills {
-            constructor(skill) {
-                this.skill = skill;
 
-            }
-            mensaje() {
-                console.log("Skills agregados con exito");
-            }
-        }
-
-        let arraySkills = [];
+        let skillsFields = document.querySelectorAll(".skill");
         const setSkills = document.querySelector("#cv_skills");
 
-        let skill = document.querySelectorAll(".skill");
-
-        // Obtiene cada valor de los inputs con la clase skill, crea un objeto con dichos valores y luego los
-        /// asigna a un array para generarlos en el html
-        for(let i = 0; i < skill.length; i++) {
-            // arraySkills[i] = skills[i].value;
-            arraySkills = new Skills(skill[i].value);
-            //console.log(arraySkills);
-            setSkills.innerHTML += `<p>- ${arraySkills.skill}</p>`
+        let skillStrings = '';
+        for(let s of skillsFields) {
+            skillStrings = skillStrings + `<p>- ${s.value}</p>`;
         }
+
+        setSkills.innerHTML = skillStrings;
 
         /* /Generar Skills */
 
@@ -182,16 +132,30 @@ $(btnGenerarCv).click( (e) => {
             // Constructor + asignar valor de constructor al array
             arrayTecnologies = new Tecnologies(tecnology[i].value);
             // Crear elemento
-            const li = document.createElement("li");
+            const p = document.createElement("p");
             // Asignarle cada elemento como texto al li
-            li.textContent = arrayTecnologies.tecnology;
+            p.textContent = arrayTecnologies.tecnology;
             // Asignar como hijo el li al fragmento para no generar reflow
-            fragment.appendChild(li);
+            fragment.appendChild(p);
         }
 
         cvTecnologies.appendChild(fragment);
 
         /* /Generar Tecnologías */
+
+        /* Generar Idiomas */
+
+        let idiomaFields = document.querySelectorAll(".idioma");
+        const setidioma = document.querySelector("#cv_idioma");
+
+        let idiomaStrings = '';
+        for(let i of idiomaFields) {
+            idiomaStrings = idiomaStrings + `<p>- ${i.value}</p>`;
+        }
+
+        setidioma.innerHTML = idiomaStrings;
+
+        /* /Generar Idiomas */
         
         /* Esconder Formulario - Mostrar CV */
         const formulario = document.querySelector("#formulario");
@@ -231,7 +195,7 @@ añadirFormacion.addEventListener("click", (e) => {
     padre.insertBefore(nuevoCampo,añadirBtnAcademica);
 });
 /* /Añadir Formación */
-//console.log("DISTE CLICK")
+
 /* Añadir Experiencia */
 const añadirExp = document.querySelector(".añadirExp");
 añadirExp.addEventListener("click", (e) => {
@@ -256,10 +220,143 @@ añadirExp.addEventListener("click", (e) => {
     // Inserta el hijo y el boton
     padre.insertBefore(nuevoCampo,añadirBtnExp);
 });
-/* /Añadir Experiencia */
+/* // Añadir Experiencia */
 
-// Cambiar color de fondo y titulos + LocalStorage
-// PENDIENTE: Llevarlo a un archivo JS aparte
+/* Añadir Skill */
+const añadirSkill = document.querySelector(".añadirSkill");
+añadirSkill.addEventListener("click", (e) => {
+    e.preventDefault();
+    // Crear nodo a insertar
+    let nuevoCampo = document.createElement("input");
+    let nuevoDiv = document.createElement("div");
+    let nuevoSpan = document.createElement("span");
+    let nuevoI = document.createElement("i");
+    // Clases
+    // Nuevo Input
+    nuevoCampo.classList.add("form-control");
+    nuevoCampo.classList.add("skill");
+    nuevoCampo.classList.add("skillField");
+
+    // Nuevo Div
+    nuevoDiv.classList.add("input-group");
+    nuevoDiv.classList.add("mb-3");
+    nuevoDiv.classList.add("skills");
+    // Nuevo SPan
+    nuevoSpan.classList.add("input-group-text");
+    // Nuevo I
+    nuevoI.classList.add("form-redes");
+    nuevoI.classList.add("far");
+    nuevoI.classList.add("fa-lightbulb");
+
+    // Atributos
+    nuevoCampo.setAttribute("placeholder", "Skill");
+
+    // Juntar Icono con span
+    nuevoSpan.append(nuevoI);
+
+    // Asignar el input al Div
+    nuevoDiv.append(nuevoSpan);
+    nuevoDiv.append(nuevoCampo);
+
+    // Boton que se movera
+    // Referencia al nodo padre
+    let padre = document.querySelector("#skillAñadirBtn").parentNode;
+    
+    // Insertar
+    padre.append(nuevoDiv);
+});
+/* // Añadir Skill */
+
+/* Añadir Tecnologías */
+const añadirTech = document.querySelector(".añadirTech");
+añadirTech.addEventListener("click", (e) => {
+    e.preventDefault();
+    // Crear nodo a insertar
+    let nuevoCampo = document.createElement("input");
+    let nuevoDiv = document.createElement("div");
+    let nuevoSpan = document.createElement("span");
+    let nuevoI = document.createElement("i");
+
+    // Clases
+    // Nuevo Input
+    nuevoCampo.classList.add("form-control");
+    nuevoCampo.classList.add("tecnology");
+    nuevoCampo.classList.add("tecnologyField");
+        // Nuevo Div
+    nuevoDiv.classList.add("input-group");
+    nuevoDiv.classList.add("mb-3");
+    nuevoDiv.classList.add("skills");
+    // Nuevo Span
+    nuevoSpan.classList.add("input-group-text");
+    // Nuevo I
+    nuevoI.classList.add("form-redes");
+    nuevoI.classList.add("fas");
+    nuevoI.classList.add("fa-laptop-code");
+
+    // Atributos
+    nuevoCampo.setAttribute("placeholder", "Software - Nivel");
+
+    // Juntar Icono con span
+    nuevoSpan.append(nuevoI);
+
+    // Asignar el input al Div
+    nuevoDiv.append(nuevoSpan);
+    nuevoDiv.append(nuevoCampo);
+
+    // Boton que se movera
+    // Referencia al nodo padre
+    let padre = document.querySelector("#techAñadirBtn").parentNode;
+    
+    // Insertar
+    padre.append(nuevoDiv);
+});
+/* // Añadir Tecnologías */
+
+/* Añadir Idioma */
+const añadirIdioma = document.querySelector(".añadirIdioma");
+añadirIdioma.addEventListener("click", (e) => {
+    e.preventDefault();
+    // Crear nodo a insertar
+    let nuevoCampo = document.createElement("input");
+    let nuevoDiv = document.createElement("div");
+    let nuevoSpan = document.createElement("span");
+    let nuevoI = document.createElement("i");
+
+    // Clases
+    // Nuevo Input
+    nuevoCampo.classList.add("form-control");
+    nuevoCampo.classList.add("idioma");
+    nuevoCampo.classList.add("idiomaField");
+    // Nuevo Div
+    nuevoDiv.classList.add("input-group");
+    nuevoDiv.classList.add("mb-3");
+    nuevoDiv.classList.add("idiomas");
+    // Nuevo Span
+    nuevoSpan.classList.add("input-group-text");
+    // Nuevo I
+    nuevoI.classList.add("form-redes");
+    nuevoI.classList.add("fas");
+    nuevoI.classList.add("fa-globe-europe");
+
+    // Atributos
+    nuevoCampo.setAttribute("placeholder", "Idioma - Nivel");
+
+    // Juntar Icono con span
+    nuevoSpan.append(nuevoI);
+
+    // Asignar el input al Div
+    nuevoDiv.append(nuevoSpan);
+    nuevoDiv.append(nuevoCampo);
+
+    // Boton que se movera
+    // Referencia al nodo padre
+    let padre = document.querySelector("#idiomaAñadirBtn").parentNode;
+    
+    // Insertar
+    padre.append(nuevoDiv);
+});
+/* // Añadir Idioma */
+
 
 // Titulos con Subrayados
 const tituloObjetivos = document.querySelector(".spanObjetivos");

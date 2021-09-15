@@ -14,106 +14,127 @@
 <body>
     <h1>Generador de CV</h1>
     <div class="containerCss">
-        <div class="row">
+        <div class="row"> <!-- Row Formulario -->
             <!-- --- Formulario --- -->
 
-            <div class="formulario" id="formulario">
-                <form id="basic-form" name="registration">
+            <div class="formulario" id="formulario"> <!-- Id Formulario -->
+                <form id="basic-form" name="registration"> <!-- Form -->
                     <div class="form_center">
-                        <div class="col-md-6 container">
-
+                        <div class="col-md-6 container"> <!-- Col 6 Container -->
                             <!-- Perfil Personal -->
-                            <div class="input-group mb-3">
+                            <div class="input-group mb-3"> <!-- Nombre y Apellido -->
                                 <span class="input-group-text" id="basic-addon1"><i class="form-redes fa fa-user"></i></span>
                                 <input type="text" id="nameField" minlength="3" placeholder="Nombre y Apellido*"
                                     class="form-control" aria-describedby="basic-addon1" name="name">
-                            </div>
+                            </div> <!-- // Nombre y Apellido -->
 
-                            <div class="input-group mb-3">
+                            <div class="input-group mb-3"> <!-- Profesion -->
                                 <span class="input-group-text" id="basic-addon2"><i class="form-redes fa fa-user-tie"></i></span>
                                 <!-- aria-describedby y el id basic addon no son necesarios -->
                                 <input type="text" id="professionField" name="profession" placeholder="Profesión*"
                                     class="form-control" aria-describedby="basic-addon2">
-                            </div>
-                            <div class="input-group mb-3">
+                            </div> <!-- // Profesion -->
+
+                            <div class="input-group mb-3"> <!-- Telefono -->
                                 <span class="input-group-text"><i class="form-redes fa fa-phone-alt"></i></span>
                                 <input type="text" id="telField" name="tel" placeholder="Teléfono*"
                                     class="form-control">
-                            </div>
-                            <div class="input-group mb-3">
+                            </div> <!-- // Telefono -->
+
+                            <div class="input-group mb-3"> <!-- Email -->
                                 <span class="input-group-text"><i class="form-redes fa fa-envelope"></i></span>
                                 <input type="email" name="email" id="mailField" placeholder="Email*"
                                     class="form-control">
-                            </div>
-                            <div class="input-group mb-3">
+                            </div> <!-- // Email -->
+
+                            <div class="input-group mb-3"> <!-- LinkedIn -->
                                 <span class="input-group-text"><i class="form-redes fab fa-linkedin"></i></span>
                                 <input type="text" id="linkField" placeholder="LinkedIn" class="form-control">
-                            </div>
-                            <!-- Skills -->
-                            <div class="input-group mb-3 skills" id="form_skills">
-                                <span class="input-group-text"><i class="form-redes fas fa-trophy"></i></span>
-                                <input type="text" id="sk1" placeholder="Tu skill más importante"
-                                    class="form-control skill">
-                                <span class="input-group-text ml-10"><i class="form-redes fas fa-trophy"></i></span>
-                                <input type="text" id="sk2" placeholder="Tu 2da skill más importante"
-                                    class="form-control skill">
-                                <span class="input-group-text ml-10"><i class="form-redes fas fa-trophy"></i></span>
-                                <input type="text" id="sk3" placeholder="Tu 3ra skill más importante"
-                                    class="form-control skill">
-                            </div>
-                            <!-- /Skills -->
-                            <!-- Tecnologías -->
-                            <div class="input-group mb-3 tecnologies" id="form_tecnologies">
-                                <span class="input-group-text"><i class="form-redes fab fa-codepen"></i></span>
-                                <input type="text" id="tc1" placeholder="Tecnología 1" class="form-control tecnology">
-                                <span class="input-group-text ml-10"><i class="form-redes fab fa-codepen"></i></span>
-                                <input type="text" id="tc2" placeholder="Tecnología 2" class="form-control tecnology">
-                                <span class="input-group-text ml-10"><i class="form-redes fab fa-codepen"></i></span>
-                                <input type="text" id="tc3" placeholder="Tecnología 3" class="form-control tecnology">
-                            </div>
-                            <!-- /Tecnologías -->
-                            <!-- /Perfil Personal -->
-                        </div>
-                        <!-- --- /Formulario --- -->
+                            </div> <!-- // LinkedIn -->
+                            
+                            <div class="row"> <!-- Row Skill - Tech - Idioma -->
+                                <div class="col-4">
+                                    <div class="input-group mb-3 skills" id="form_skills"> <!-- Skills -->
+                                        <span class="input-group-text"><i class="form-redes fas fa-lightbulb"></i></span>
+                                        <input type="text" id="sk1" placeholder="Skill"
+                                            class="form-control skill skillField">
+                                    </div> <!-- /Skills -->
+                                    <div class="container text-center mt-2" id="skillAñadirBtn"> <!-- Añadir Boton Skills -->
+                                        <button class="btn btn-primary btn-sm mb-2 btn_add añadirSkill">
+                                            <i class="fas fa-plus-circle"></i>
+                                        </button>
+                                    </div> <!-- // Añadir Boton Skills -->
+                                </div>
+                                
+                                <div class="col-4">
+                                    <div class="input-group mb-3 tecnologies" id="form_tecnologies"> <!-- Tecnologías -->
+                                        <span class="input-group-text"><i class="form-redes fas fa-laptop-code"></i></span>
+                                        <input type="text" id="tc1" placeholder="Software - Nivel" class="form-control tecnology tecnologyField">
+                                    </div> <!-- /Tecnologías -->
+                                    <div class="container text-center mt-2" id="techAñadirBtn"> <!-- Añadir Boton Tecnologías -->
+                                        <button class="btn btn-primary btn-sm mb-2 btn_add añadirTech">
+                                            <i class="fas fa-plus-circle"></i>
+                                        </button>
+                                    </div> <!-- // Añadir Boton Tecnologías -->
+                                </div>
+                                
+                                <div class="col-4">
+                                    <div class="input-group mb-3 idiomas" id="form_idiomas"> <!-- Idiomas -->
+                                        <span class="input-group-text"><i class="form-redes fas fa-globe-americas"></i></span>
+                                        <input type="text" id="tc1" placeholder="Idioma -  Nivel" class="form-control idioma idiomaField">
+                                    </div> <!-- // Idiomas -->
+                                    <div class="container text-center mt-2" id="idiomaAñadirBtn"> <!-- Añadir Boton Idiomas -->
+                                        <button class="btn btn-primary btn-sm mb-2 btn_add añadirIdioma">
+                                            <i class="fas fa-plus-circle"></i>
+                                        </button>
+                                    </div> <!-- // Añadir Boton Idiomas -->
+                                </div>
+                            </div> <!-- // Row Skill - Tech - Idioma -->
+                        
+                        </div> <!-- Col 6 Container -->
+
+                        <!-- // Perfil Personal -->
+                        
 
                         <!-- Perfil Profesional -->
-                        <div class="col-md-6 container">
-                            <div class="input-group mb-3">
-                                <span class="input-group-text"><i class="form-redes fas fa-bullseye"></i></span>
+                        <div class="col-md-6 container"> <!-- Col 6 container -->
+                            <div class="input-group mb-3"> <!-- Campo Objetivo -->
+                                <span class="input-group-text"><i class="form-redes fas fa-flag-checkered"></i></span>
                                 <textarea type="text" id="objField" name="obj" placeholder="Tu perfil y/o objetivos*"
                                     class="form-control"></textarea>
-                            </div>
-                            <div class="input-group mb-3" id="experiencia">
+                            </div> <!-- // Campo Objetivo -->
+                            <div class="input-group mb-3" id="experiencia"> <!-- Campo Experiencia -->
                                 <span class="input-group-text" id="spanPadre"><i class="form-redes fas fa-briefcase"></i></span>
                                 <textarea type="text" placeholder="Tu experiencia" class="form-control expField"
                                     rows="3"></textarea>
-                            </div>
-                            <div class="container text-center mt-2" id="expAñadirBtn">
+                            </div> <!-- // Campo Experiencia -->
+                            <div class="container text-center mt-2" id="expAñadirBtn"> <!-- Añadir Boton Experiencia -->
                                 <button class="btn btn-primary btn-sm mb-2 btn_add añadirExp">
                                     <i class="fas fa-plus-circle"></i>
                                 </button>
-                            </div>
-                            <div class="input-group mb-3" id="formacionAcademica">
+                            </div> <!-- // Añadir Boton Experiencia -->
+                            <div class="input-group mb-3" id="formacionAcademica"> <!-- Campo Estudios -->
                                 <span id="span" class="input-group-text"><i class="form-redes fas fa-user-graduate"></i></span>
                                 <textarea type="text" placeholder="Tus estudios"
                                     class="form-control academicaField" rows="3"></textarea>
-                            </div>
-                            <div class="container text-center mt-2" id="academicaAñadirBtn">
+                            </div> <!-- // Campo Estudios -->
+                            <div class="container text-center mt-2" id="academicaAñadirBtn"> <!-- Añadir Boton Estudios -->
                                 <button class="btn btn-primary btn-sm btn_add añadirFormacion">
                                     <i class="form-redes fas fa-plus-circle"></i>
                                 </button>
-                            </div>
-                        </div>
+                            </div> <!-- // Añadir Boton Estudios -->
+                        </div> <!-- Col 6 container -->
                         <!-- /Perfil Profesional -->
 
-                        <div class="divGenerar">
+                        <div class="divGenerar"> <!-- Boton Generar CV -->
                             <p id="agregarAlert"></p>
                             <input type="submit" value="Generar CV" class="submit btnGenerarCv">
-                        </div>
+                        </div> <!-- // Boton Generar CV -->
 
-                </form>
-            </div>
-        </div>
+                </form> <!-- // Form -->
+            </div> <!-- Id Formulario -->
+        </div> <!-- // Row Formulario -->
+        <!-- --- // Formulario --- -->
 
         <!-- --- CV --- -->
 
@@ -191,9 +212,13 @@
                             <h3 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3"><span class="spanSkills">Skills</span></h3>
                             <div id="cv_skills"></div> <!-- Skills -->
                         </section>
-                        <section>
+                        <section class="resume-section skills-section mb-5">
                             <h3 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3"><span class="spanTecnologias">Tecnologías</span></h3>
-                            <div><ul id="cv_tecnologies"></ul></div> <!-- Tecnologies -->
+                            <div id="cv_tecnologies"></div> <!-- Idiomas -->
+                        </section>
+                        <section class="resume-section skills-section mb-5">
+                            <h3 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3"><span class="spanIdiomas">Idiomas</span></h3>
+                            <div id="cv_idioma"></div> <!-- Idiomas -->
                         </section>
                     </div> <!-- // Col 3 -->
                 </div> <!-- // Row Exp -->
