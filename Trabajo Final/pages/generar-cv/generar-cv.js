@@ -73,30 +73,73 @@ $(btnGenerarCv).click( (e) => {
 
 
         /* Generar Estudios */
-        let academicaField = document.querySelectorAll(".academicaField");
-        const setEstudio = document.querySelector("#estudiosDiv");
+       
+        let estFieldFac = document.querySelectorAll(".estudioFacultad");
 
-        let estudioStrings = '';
-        for(let e of academicaField) {
-            estudioStrings = estudioStrings + `<p class="resume-timeline-item">${e.value}</p>`;
+        let estField = document.querySelectorAll(".estField");
+
+        let estFacStrings = [];
+        for(let f of estFieldFac) {
+            let fac = {
+                nom2: `<h4 class="resume-timeline-item">${f.value}</h4>`
+            }
+            estFacStrings.push(fac);
         }
 
-        setEstudio.innerHTML = estudioStrings;
+        let divEst = document.getElementById("datoFacultades");
+
+        let estStrings = [];
+        for(let f of estField) {
+            let desc = {
+                ds: `<p>${f.value}</p>`
+            }
+            estStrings.push(desc);
+        }
+
+        for(let i = 0; i < estStrings.length; i++) {
+            divEst.innerHTML += 
+            `
+            <h4>${estFacStrings[i].nom2}</h4>
+            <div class="resume-timeline position-relative">${estStrings[i].ds}</div>
+            `
+        }
+        
 
         /* // Generar Estudios */
 
         /* Generar Experiencia */
-        let expField = document.querySelectorAll(".expField");
-        const setExperiencia = document.querySelector("#expDiv");
+       
+        let expFieldEmpresa = document.querySelectorAll(".experienciaEmpresa");
 
-        let expStrings = '';
-        for(let e of expField) {
-            expStrings = expStrings + `<p class="resume-timeline-item">${e.value}</p>`;
+        let expField = document.querySelectorAll(".expField");
+
+        let expEmpresaStrings = [];
+        for(let e of expFieldEmpresa) {
+            let emp = {
+                nom: `<h4 class="resume-timeline-item">${e.value}</h4>`
+            }
+            expEmpresaStrings.push(emp);
         }
 
-        setExperiencia.innerHTML = expStrings;
-        /* // Generar Experiencia */
+        let divExp = document.getElementById("datoEmpresas");
 
+        let expStrings = [];
+        for(let e of expField) {
+            let exp = {
+                xp: `<p>${e.value}</p>`
+            }
+            expStrings.push(exp);
+        }
+
+        for(let i = 0; i < expStrings.length; i++) {
+            divExp.innerHTML += 
+            `
+            <h4 id="expH4">${expEmpresaStrings[i].nom}</h4>
+            <div class="resume-timeline position-relative">${expStrings[i].xp}</div>
+            `
+        }
+        
+        /* // Generar Experiencia */
 
         /* Generar Skills */
 
@@ -182,17 +225,70 @@ añadirFormacion.addEventListener("click", (e) => {
     e.preventDefault();
         /* Añade un nuevo campo de Formación académica junto con el botón */
     let nuevoCampo = document.createElement("textarea");
+    let nuevoDiv = document.createElement("div");
+    let nuevoSpan = document.createElement("span");
+    let nuevoI = document.createElement("i");
+    // Facultad
+    let nuevoCampoFacultad = document.createElement("input");
+    let nuevoDivFacultad = document.createElement("div");
+    let nuevoSpanFacultad = document.createElement("span");
+    let nuevoIFacultad = document.createElement("i");
+    //Clases
+    // Nuevo Textarea
     nuevoCampo.classList.add("form-control");
-    nuevoCampo.classList.add("mt-2");
     nuevoCampo.classList.add("academicaField");
+    nuevoCampo.classList.add("estudio");
+    // Nuevo Input Facultad
+    nuevoCampoFacultad.classList.add("form-control");
+    nuevoCampoFacultad.classList.add("experienciaEmpresa");
+    // Nuevo Div
+    nuevoDiv.classList.add("input-group");
+    nuevoDiv.classList.add("mb-3");
+    nuevoDiv.classList.add("estudios");
+    // Nuevo Div Facultad
+    nuevoDivFacultad.classList.add("input-group");
+    nuevoDivFacultad.classList.add("mb-1");
+    nuevoDivFacultad.classList.add("experienciasEmpresa");
+    // Nuevo SPan
+    nuevoSpan.classList.add("input-group-text");
+    nuevoSpan.classList.add("bg-icons")
+    // Nuevo Span Facultad
+    nuevoSpanFacultad.classList.add("input-group-text");
+    nuevoSpanFacultad.classList.add("bg-icons")
+    // Nuevo I
+    nuevoI.classList.add("form-redes");
+    nuevoI.classList.add("fas");
+    nuevoI.classList.add("fa-user-graduate");
+    // Nuevo I Facultad
+    nuevoIFacultad.classList.add("form-redes");
+    nuevoIFacultad.classList.add("fas");
+    nuevoIFacultad.classList.add("fa-briefcase");
+    // Atributos
     nuevoCampo.setAttribute("rows", 3);
     nuevoCampo.setAttribute("placeholder", "Tus estudios");
+    // Atributos Facultad
+    nuevoCampoFacultad.setAttribute("placeholder", "Nombre de facultad")
 
     let añadirBtnAcademica = document.querySelector("#academicaAñadirBtn");
     let padre = document.querySelector("#formacionAcademica").parentNode;
+    let padreFacultad = document.querySelector("#experiencia").parentNode;
+
+    // Juntar Icono con span
+    nuevoSpan.append(nuevoI);
+
+    nuevoSpanFacultad.append(nuevoIFacultad);
+
+    // Asignar el input al Div
+    nuevoDiv.append(nuevoSpan);
+    nuevoDiv.append(nuevoCampo);
+
+    nuevoDivFacultad.append(nuevoSpanFacultad);
+    nuevoDivFacultad.append(nuevoCampoFacultad);
+
+    padreFacultad.insertBefore(nuevoDivFacultad, añadirBtnAcademica);
     
-    // Inserta los elementos hijos dentro del padre
-    padre.insertBefore(nuevoCampo,añadirBtnAcademica);
+    // Inserta el hijo y el boton
+    padre.insertBefore(nuevoDiv,añadirBtnAcademica);
 });
 /* /Añadir Formación */
 
@@ -203,22 +299,75 @@ añadirExp.addEventListener("click", (e) => {
     /* Añade un nuevo campo de Experiencia junto con el botón */
     
     // Crear nodo a insertar
+    // Descripcion
     let nuevoCampo = document.createElement("textarea");
+    let nuevoDiv = document.createElement("div");
+    let nuevoSpan = document.createElement("span");
+    let nuevoI = document.createElement("i");
+    // Empresa
+    let nuevoCampoEmpresa = document.createElement("input");
+    let nuevoDivEmpresa = document.createElement("div");
+    let nuevoSpanEmpresa = document.createElement("span");
+    let nuevoIEmpresa = document.createElement("i");
     // Clases
+    // Nuevo Textarea
     nuevoCampo.classList.add("form-control");
-    nuevoCampo.classList.add("mt-2");
     nuevoCampo.classList.add("expField");
+    nuevoCampo.classList.add("experiencia");
+    // Nuevo Input Empresa
+    nuevoCampoEmpresa.classList.add("form-control");
+    nuevoCampoEmpresa.classList.add("experienciaEmpresa");
+    // Nuevo Div
+    nuevoDiv.classList.add("input-group");
+    nuevoDiv.classList.add("mb-3");
+    nuevoDiv.classList.add("experiencias");
+
+    // Nuevo Div Empresa
+    nuevoDivEmpresa.classList.add("input-group");
+    nuevoDivEmpresa.classList.add("mb-1");
+    nuevoDivEmpresa.classList.add("experienciasEmpresa");
+    // Nuevo SPan
+    nuevoSpan.classList.add("input-group-text");
+    nuevoSpan.classList.add("bg-icons")
+    // Nuevo Span Empresa
+    nuevoSpanEmpresa.classList.add("input-group-text");
+    nuevoSpanEmpresa.classList.add("bg-icons")
+    // Nuevo I
+    nuevoI.classList.add("form-redes");
+    nuevoI.classList.add("fas");
+    nuevoI.classList.add("fa-briefcase");
+    // Nuevo I Empresa
+    nuevoIEmpresa.classList.add("form-redes");
+    nuevoIEmpresa.classList.add("fas");
+    nuevoIEmpresa.classList.add("fa-briefcase");
     // Atributos
     nuevoCampo.setAttribute("rows", 3);
-    nuevoCampo.setAttribute("placeholder", "Tu experiencia");
+    nuevoCampo.setAttribute("placeholder", "Tu Experiencia en otra empresa");
+    // Atributos Empresa
+    nuevoCampoEmpresa.setAttribute("placeholder", "Nombre de nueva Empresa")
 
     // Boton que se movera
     let añadirBtnExp = document.querySelector("#expAñadirBtn");
     // Referencia al nodo padre
     let padre = document.querySelector("#experiencia").parentNode;
+    let padreEmpresa = document.querySelector("#experiencia").parentNode;
+
+    // Juntar Icono con span
+    nuevoSpan.append(nuevoI);
+
+    nuevoSpanEmpresa.append(nuevoIEmpresa);
+
+    // Asignar el input al Div
+    nuevoDiv.append(nuevoSpan);
+    nuevoDiv.append(nuevoCampo);
+
+    nuevoDivEmpresa.append(nuevoSpanEmpresa);
+    nuevoDivEmpresa.append(nuevoCampoEmpresa);
+
+    padreEmpresa.insertBefore(nuevoDivEmpresa, añadirBtnExp);
     
     // Inserta el hijo y el boton
-    padre.insertBefore(nuevoCampo,añadirBtnExp);
+    padre.insertBefore(nuevoDiv,añadirBtnExp);
 });
 /* // Añadir Experiencia */
 
@@ -243,6 +392,7 @@ añadirSkill.addEventListener("click", (e) => {
     nuevoDiv.classList.add("skills");
     // Nuevo SPan
     nuevoSpan.classList.add("input-group-text");
+    nuevoSpan.classList.add("bg-icons")
     // Nuevo I
     nuevoI.classList.add("form-redes");
     nuevoI.classList.add("far");
@@ -282,16 +432,17 @@ añadirTech.addEventListener("click", (e) => {
     nuevoCampo.classList.add("form-control");
     nuevoCampo.classList.add("tecnology");
     nuevoCampo.classList.add("tecnologyField");
-        // Nuevo Div
+    // Nuevo Div
     nuevoDiv.classList.add("input-group");
     nuevoDiv.classList.add("mb-3");
     nuevoDiv.classList.add("skills");
     // Nuevo Span
     nuevoSpan.classList.add("input-group-text");
+    nuevoSpan.classList.add("bg-icons")
     // Nuevo I
     nuevoI.classList.add("form-redes");
     nuevoI.classList.add("fas");
-    nuevoI.classList.add("fa-laptop-code");
+    nuevoI.classList.add("fa-laptop");
 
     // Atributos
     nuevoCampo.setAttribute("placeholder", "Software - Nivel");
@@ -333,6 +484,7 @@ añadirIdioma.addEventListener("click", (e) => {
     nuevoDiv.classList.add("idiomas");
     // Nuevo Span
     nuevoSpan.classList.add("input-group-text");
+    nuevoSpan.classList.add("bg-icons")
     // Nuevo I
     nuevoI.classList.add("form-redes");
     nuevoI.classList.add("fas");
@@ -364,6 +516,7 @@ const tituloExp = document.querySelector(".spanExp");
 const tituloEstudios = document.querySelector(".spanEstudios");
 const tituloSkills = document.querySelector(".spanSkills");
 const tituloTecnologias = document.querySelector(".spanTecnologias");
+const tituloIdiomas = document.querySelector(".spanIdiomas")
 // Fondo del CV
 const cvFondo = document.querySelector(".cv_Data");
 // Contenedor Botones
@@ -405,6 +558,9 @@ const delegacion = (e) => {
 
             tituloTecnologias.className = "resume-section-title-storage1";
             localStorage.setItem('colorTecnologias', "resume-section-title-storage1");
+
+            tituloIdiomas.className = "resume-section-title-storage1";
+            localStorage.setItem('colorIdiomas', "resume-section-title-storage1");
             break;
 
         case('btn_green2'):
@@ -425,6 +581,9 @@ const delegacion = (e) => {
 
             tituloTecnologias.className = "resume-section-title-storage2";
             localStorage.setItem('colorTecnologias', "resume-section-title-storage2");
+
+            tituloIdiomas.className = "resume-section-title-storage2";
+            localStorage.setItem('colorIdiomas', "resume-section-title-storage2");
             break;
 
         case('btn_green3'): 
@@ -445,6 +604,9 @@ const delegacion = (e) => {
 
             tituloTecnologias.className = "resume-section-title-storage3";
             localStorage.setItem('colorTecnologias', "resume-section-title-storage3");
+
+            tituloIdiomas.className = "resume-section-title-storage3";
+            localStorage.setItem('colorIdiomas', "resume-section-title-storage3");
             break;
 
         case('btn_green4'): 
@@ -465,6 +627,9 @@ const delegacion = (e) => {
 
             tituloTecnologias.className = "resume-section-title-storage4";
             localStorage.setItem('colorTecnologias', "resume-section-title-storage4");
+
+            tituloIdiomas.className = "resume-section-title-storage4";
+            localStorage.setItem('colorIdiomas', "resume-section-title-storage4");
             break;
     }
 }
@@ -483,6 +648,7 @@ const delegacion = (e) => {
     const colorEstudios = localStorage.getItem('colorEstudios');
     const colorSkills = localStorage.getItem('colorSkills');
     const colorTecnologias = localStorage.getItem('colorTecnologias');
+    const colorIdiomas = localStorage.getItem('colorIdiomas');
 
     if(colorDeFondo === null) {
         cvFondo.className = "cv_Data";
@@ -493,6 +659,7 @@ const delegacion = (e) => {
         tituloEstudios.className = colorEstudios;
         tituloSkills.className = colorSkills;
         tituloTecnologias.className = colorTecnologias;
+        tituloIdiomas.className = colorIdiomas;
     }
 
 
@@ -531,3 +698,12 @@ importarCV.addEventListener("click", () => {
     .catch(err => console.log(err));
 });
 
+
+
+//mediaprint
+
+/* <link href="print.css" rel="stylesheet" type="text/css" media="print">
+ */
+
+/* https://www.w3schools.com/css/css3_mediaqueries.asp
+ */

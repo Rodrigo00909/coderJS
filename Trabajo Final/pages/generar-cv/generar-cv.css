@@ -230,6 +230,10 @@ h4 {
     color: #393e46;
 }
 
+h4 {
+    font-size: 1.2rem;
+}
+
 h1 {
     margin-bottom: 4rem;
     font-size: 2.8rem;
@@ -298,13 +302,43 @@ textarea {
     grid-template-columns: repeat(3, 1fr);
 }
 
-/* width: 85%;
-margin-left: 30px; */
+.bg-icons {
+    background-color: #60628c;
+    border-color: #60628c;
+}
 
-/* .skillTechIdioma .row {
-    padding-right: 4px;
-    padding-left: 4px
+.añadirBtnMedias {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn_add_Media {
+    position: relative;
+    left: 20px;
+    top: 6px;
+    animation-delay: 1s
+}
+
+.btn_add_Media:focus {
+    outline: none;
+    box-shadow: none;
+    transform: scale(1.2);
+}
+
+.btn_add_Media i {
+    color: #494CA2;
+}
+
+.btn_add_Media i:hover {
+    color: #8186d5;
+}
+
+/* .addIconsMedia {
+    position: relative;
+    right: 25px;
+    bottom: 10px;
 } */
+
 
 
 /* CV */
@@ -349,8 +383,13 @@ margin-left: 30px; */
     color: #dcdcdc;
 }
 
-.text-link:hover {
+.text-link a {
+    color: #dcdcdc;
+}
+
+.text-link a:hover {
     text-decoration: underline;
+    color: #8186d5;
 }
 
 .cv-icons {
@@ -383,7 +422,7 @@ margin-left: 30px; */
     height: 100%;
     background: #aab4c3;
     left: 6px;
-    top: 4px;
+    top: -12px;
     position: absolute;
 }
 
@@ -391,11 +430,25 @@ margin-left: 30px; */
     content: "";
     display: inline-block;
     position: relative;
+    left: 0px;
+    margin-right: 10px;
+    top: 0px;
+    width: 15px;
+    height: 15px;
+    border: 4px solid #8e9092;
+    background: white;
+    border-radius: 50%;
+}
+
+.resume-timeline2-item:before {
+    content: "";
+    display: inline-block;
+    position: relative;
     left: -32px;
     top: 0px;
     width: 15px;
     height: 15px;
-    border: 4px solid #58677c; /* ATENTOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO */
+    border: 4px solid #8e9092;
     background: white;
     border-radius: 50%;
 }
@@ -417,7 +470,7 @@ margin-left: 30px; */
 }
 
 .resume-section-content {
-    color: #58677c;
+    color: #5e646b;
 }
 
 .btn_green1 {
