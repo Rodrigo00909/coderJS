@@ -13,13 +13,23 @@ Es un Generador de Currilum Vitae, realizado con Vainilla Javascript en su mayor
 Trata de un formulario donde colocás tu información personal y luego es generada en el CV, para luego ser descargada en PDF. Tiene una opción para elegir el color del cv. Sigue en modo beta.
 </h4>
 
-### Sin más spoilers les dejo unas screen para que puedan verlo.
+### Sin más spoilers les el link para que puedan verlo, pero si prefieren quedarse en GitHub más abajo hay algunas screen.
 
-<img align="center" justify="center" src="https://i.postimg.cc/Y9qC4Kx9/1.png" />
+# https://construye-tu-cv.netlify.app/
+
+<img align="center" justify="center" src="https://i.postimg.cc/v8522TBM/1-inicio.png" />
 
 <br>
 
-<img align="center" justify="center" src="https://i.postimg.cc/htpPT7B3/cv1.png" />
+<img align="center" justify="center" src="https://i.postimg.cc/0QwXs20Y/2-generarcv.png" />
+
+<br>
+
+<img align="center" justify="center" src="https://i.postimg.cc/x8VxTD6W/3-cvgenerado.png" />
+
+<br>
+
+<img align="center" justify="center" src="https://i.postimg.cc/j268Dg9C/4-ejemplos.png" />
 
 Link: https://generador-cv.netlify.app/
 
@@ -34,13 +44,19 @@ Link: https://generador-cv.netlify.app/
 - [x] Animaciones básicas
 - [x] Agregación de datos de input +
 - [x] Descarga de PDF
+- [x] Estructura Final
+- [x] Agregación de campo Idiomas
+- [x] Estilos Finales
+- [x] Animaciones avanzadas
+- [x] Font principal
+- [x] Página de Ejemplos:
+- [x] Javascript: JSON
+- [x] Javascript: Ajax
+- [x] Página de Inicio:
+- [x] Maquetado
 
 ## Pendiente
-- [ ] Estructura Final
-- [ ] Agregación de campo Idiomas
-- [ ] Estilos Finales
-- [ ] Animaciones avanzadas
-- [ ] Font principal
+
 
 ## Contactame en:
 
