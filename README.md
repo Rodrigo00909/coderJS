@@ -15,7 +15,7 @@ Trata de un formulario donde colocás tu información personal y luego es genera
 
 ### Sin más spoilers les el link para que puedan verlo, pero si prefieren quedarse en GitHub más abajo hay algunas screen.
 
-# https://construye-tu-cv.netlify.app/
+<h1 align="center">https://construye-tu-cv.netlify.app/</h1>
 
 <img align="center" justify="center" src="https://i.postimg.cc/v8522TBM/1-inicio.png" />
 
@@ -30,8 +30,6 @@ Trata de un formulario donde colocás tu información personal y luego es genera
 <br>
 
 <img align="center" justify="center" src="https://i.postimg.cc/j268Dg9C/4-ejemplos.png" />
-
-Link: https://generador-cv.netlify.app/
 
 ## Realizado hasta ahora
 
@@ -56,7 +54,6 @@ Link: https://generador-cv.netlify.app/
 - [x] Maquetado
 
 ## Pendiente
-
 
 ## Contactame en:
 
