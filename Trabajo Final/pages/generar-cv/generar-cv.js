@@ -10,12 +10,11 @@ $(btnGenerarCv).click( (e) => {
     const tel = $.trim($("#telField").val());
     const email = $.trim($("#mailField").val());
     const objetivo = $.trim($("#objField").val());
+    const linkedin = $.trim($('#linkField').val());
 
     const btnComprobar = $("#agregarAlert");
 
-    if(nombre == '' || profesion == '' || tel == '' || email == '' || objetivo == ''){
-        /* console.log('Hay campos sin completar');
-        return false; */
+    if(nombre == '' || profesion == '' || tel == '' || email == '' || objetivo == '' || linkedin == ''){
         $(document).ready(function() {
             $(btnComprobar).html("Porfavor, llenar los campos obligatorios")
         })
@@ -71,11 +70,26 @@ $(btnGenerarCv).click( (e) => {
         setObjetivo.innerHTML = `<p class="mb-0">${objField}</p>`;
         /* // Generar Objetivo Personal */
 
+        /* Generar Img */
+        let file = document.getElementById("imgField").files[0];
+
+        if(file[0] != 0) {
+            let reader = new FileReader();
+
+            reader.readAsDataURL(file);
+
+            // Img a template
+
+            reader.onloadend = function() {
+                document.getElementById("imgTemplate").src = reader.result;
+            }
+        }
+
+        /* // Generar Img */
+
 
         /* Generar Estudios */
-       
         let estFieldFac = document.querySelectorAll(".estudioFacultad");
-
         let estField = document.querySelectorAll(".estField");
 
         let estFacStrings = [];
@@ -103,14 +117,10 @@ $(btnGenerarCv).click( (e) => {
             <div class="resume-timeline position-relative">${estStrings[i].ds}</div>
             `
         }
-        
-
         /* // Generar Estudios */
 
         /* Generar Experiencia */
-       
         let expFieldEmpresa = document.querySelectorAll(".experienciaEmpresa");
-
         let expField = document.querySelectorAll(".expField");
 
         let expEmpresaStrings = [];
@@ -236,11 +246,11 @@ añadirFormacion.addEventListener("click", (e) => {
     //Clases
     // Nuevo Textarea
     nuevoCampo.classList.add("form-control");
-    nuevoCampo.classList.add("academicaField");
+    nuevoCampo.classList.add("estField");
     nuevoCampo.classList.add("estudio");
     // Nuevo Input Facultad
     nuevoCampoFacultad.classList.add("form-control");
-    nuevoCampoFacultad.classList.add("experienciaEmpresa");
+    nuevoCampoFacultad.classList.add("estudioFacultad");
     // Nuevo Div
     nuevoDiv.classList.add("input-group");
     nuevoDiv.classList.add("mb-3");

@@ -267,9 +267,9 @@ textarea {
     flex-wrap: wrap;
 }
 
-.formulario {
+/* .formulario {
     text-align: center;
-}
+} */
 
 .input-group-text {
     background-color: #8186D5;
@@ -333,6 +333,10 @@ textarea {
     color: #8186d5;
 }
 
+.p-img {
+    margin-bottom: 2px;
+}
+
 /* .addIconsMedia {
     position: relative;
     right: 25px;
@@ -351,15 +355,16 @@ textarea {
 }
 
 .cv_Data {
-    background-color: #e7e7e7;
+    background-color: #434e5e;
 }
 
 .cv-img {
     padding-left: 0;
 }
 
-.resume-header .picture {
+.picture {
     width: 220px;
+    height: 220px;
 }
 
 .resume-header .cv_Name {

@@ -12,12 +12,11 @@
 </head>
 
 <body>
-    <h1>Generador de CV</h1>
     <div class="containerCss">
         <div class="row"> <!-- Row Formulario -->
             <!-- --- Formulario --- -->
 
-            <div class="formulario" id="formulario"> <!-- Id Formulario -->
+            <div class="formulario mt-5" id="formulario"> <!-- Id Formulario -->
                 <form id="basic-form" name="registration"> <!-- Form -->
                     <div class="form_center">
                         <div class="col-md-6 container"> <!-- Col 6 Container -->
@@ -35,6 +34,11 @@
                                     class="form-control" aria-describedby="basic-addon2">
                             </div> <!-- // Profesion -->
 
+                            <div class="form-group mb-3"> <!-- Imagen -->
+                                <p class="resume-section-content p-img">Sube tu foto*</p>
+                                <input id="imgField" type="file" class="form-control">
+                            </div> <!-- // Imagen -->
+
                             <div class="input-group mb-3"> <!-- Telefono -->
                                 <span class="input-group-text"><i class="form-redes fa fa-phone-alt"></i></span>
                                 <input type="text" id="telField" name="tel" placeholder="Teléfono*"
@@ -49,7 +53,7 @@
 
                             <div class="input-group"> <!-- LinkedIn -->
                                 <span class="input-group-text"><i class="form-redes fab fa-linkedin"></i></span>
-                                <input type="text" id="linkField" placeholder="LinkedIn" class="form-control">
+                                <input type="text" id="linkField" placeholder="LinkedIn*" class="form-control">
                             </div> <!-- // LinkedIn -->
                             
                             <div class="row"> <!-- Row Skill - Tech - Idioma -->
@@ -154,7 +158,7 @@
         <!-- Header -->
         <div class="cv dnone" id="curriculum">
             <div class="botones" id="botones">
-                <button class="btn BtnBotones jello-horizontal ">Elige un Color</button>
+                <button class="btn BtnBotones jello-horizontal mt-3">Elige un Color</button>
             </div>
             <div class="cv-container container" id="importar"> <!-- Container -->
                 <div class="row"> <!-- Row Header -->
@@ -164,8 +168,7 @@
                             <div class="row"> <!-- Row Nombre -->
                                 <div class="col-block col-md-auto resume-picture-holder text-center text-md-start cv-img"> <!-- Col Img -->
                                     <img class="picture"
-                                        src="https://i.pinimg.com/280x280_RS/0a/cb/2b/0acb2b50bae8e3b817c0678489d0bffe.jpg"
-                                        alt="Foto Cv">
+                                        id="imgTemplate">
                                 </div> <!-- // Col Img -->
                                 <div class="col"> <!-- Col Nombre -->
                                     <div class="row p-4 justify-content-center justify-content-md-between">
