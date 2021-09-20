@@ -13,6 +13,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
+    font-family: "Poppins", sans-serif;
 }
 
 h1,
@@ -35,4 +36,112 @@ textarea {
 input.form-control,
 textarea {
     box-shadow: none !important;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+/* FOTO FONDO
+.header {
+    background-size: 110rem;
+} */
+
+.header__contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.header__logo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__logo img {
+    margin: 0;
+    width: 15rem;
+}
+
+.fondo {
+    background-image: url(../img/header_bg.svg);
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 79rem;
+    height: 65rem;
+}
+
+.titulo__contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.titulo__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    align-items: center;
+}
+
+.titulo__h1 {
+    text-align: left;
+    font-size: 5rem;
+    line-height: 1.2;
+    margin-top: 10rem;
+    margin-bottom: 2rem;
+}
+
+.titulo__h3 {
+    text-align: left;
+    font-size: 2rem;
+    line-height: 1;
+    font-weight: 400;
+    margin-top: 0;
+}
+
+.titulo__img {
+    max-width: auto;
+    margin: 0 auto;
+    border-radius: 6px;
+}
+
+.mb-5 {
+    margin-bottom: 5rem;
+}
+
+.mr-2 {
+    margin-right: 2rem;
+}
+
+.button {
+    margin: 0 auto;
+    background-color: #494ca2;
+    color: #fff;
+    padding: 1.5em 3em;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: inset 0 0 0 var(--border-size) currentcolor;
+    transition: background 0.8s ease;
+    margin-top: 1.2rem;
+}
+
+.button:hover {
+    background-color: transparent;
+    color: #8186d5 !important;
+    border: 2px solid #8186d5;
+}
+
+.button a {
+    text-decoration: none;
+    color: #fff;
+    padding: 35px;
+}
+
+.titulo__botones {
+    display: flex;
+    justify-content: flex-start;
 }

@@ -14,6 +14,7 @@ body {
     margin: 0;
     padding: 0;
     background: #f9f9f9;
+    font-family: "Poppins", sans-serif;
 }
 
 h1,
@@ -34,11 +35,11 @@ h1 {
 }
 
 body {
-    background-color: #E3E7F1;
+    background-color: #e3e7f1;
 }
 
 .conteiner {
-    width: 2000px;
+    width: 1600px;
     margin: 0 auto;
 }
 
@@ -50,7 +51,7 @@ body {
     display: flex;
     align-content: center;
     justify-content: space-around;
-    flex-wrap: wrap
+    flex-wrap: wrap;
 }
 
 .imagen-cv {
@@ -73,7 +74,7 @@ body {
 
 .titulo-degradee {
     color: transparent;
-    background: linear-gradient(to right, #b379ff 0%, #494CA2) 100%;
+    background: linear-gradient(to right, #b379ff 0%, #494ca2) 100%;
     background-clip: text; /* campo al q le agregará el estilo */
     -webkit-background-clip: text;
 }
