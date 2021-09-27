@@ -53,10 +53,4 @@ Trata de un formulario donde colocás tu información personal y luego es genera
 - [x] Página de Inicio:
 - [x] Maquetado
 
-## Pendiente
-
-## Contactame en:
-
-<a target="_blank" href="https://www.linkedin.com/in/torresmessenzani/">
-<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
 
